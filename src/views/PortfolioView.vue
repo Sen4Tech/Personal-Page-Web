@@ -77,7 +77,7 @@ export default {
         {
           id: 7,
           name: 'Calculator Web',
-          imageUrl: 'Calc',
+          imageUrl: 'calc',
           status: 'In this Calculator Website Project, I use ReactJS as a framework for the website, then I use switch case for calculation logic such as +, -, :, *',
           tech: 'ReactJS, Tailwind, Github, Git',
           github: 'https://github.com/Sen4Tech/CalculatorApp',
