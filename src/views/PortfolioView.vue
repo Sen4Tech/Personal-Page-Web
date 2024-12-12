@@ -35,16 +35,26 @@ export default {
         },
         {
           id: 3,
+          name: 'Advanced Bussiness Application Development',
+          imageUrl: 'Advanced',
+          status: 'In the project, my group and I worked on various tasks, starting from making activity diagrams, use case descriptions, system sequence diagrams, then making system architecture designs and continuing with system design in the database, after that continuing with making first-cut design class diagrams, then making first-cut sequence diagrams into three-layer sequence diagrams, and ending with communication diagrams.',
+          tech: 'Visual Paradigm, Figma',
+          github: 'null',
+          demo: 'https://docs.google.com/document/d/1N3_uHHTMOdCCwSxsjSmckIte1EuCT9EgNzMtsMABpZQ/edit?usp=sharing',
+          category: 'System Analyst'
+        },
+        {
+          id: 4,
           name: 'XXI MOVIES',
           imageUrl: 'Movies',
-          status: 'In my project, I hit a movie database to consume their API, then I created a container to display all the movies I want through the API, I use ReactJS language as the target API hit.',
+          status: 'In this project, I integrated a movie database by consuming its API to fetch movie data. Using ReactJS, I created a container component to display the movies dynamically. The component manages the state and renders the movie details like title, genre, and rating. I also added features like pagination or infinite scrolling for efficient data handling and an improved user experience.',
           tech: 'ReactJS, HTML, CSS, GitHub, Git',
           github: 'https://github.com/Okta-jpg/XXI-MOVIES',
           demo: 'https://xxi-movies.vercel.app/',
           category: 'Web & Application Development'
         },
         {
-          id: 4,
+          id: 5,
           name: 'Advanced Information System Analysis and Design',
           imageUrl: 'Advanced',
           status: 'In the project, my group and I worked on various tasks, starting from making activity diagrams, use case descriptions, system sequence diagrams, then making system architecture designs and continuing with system design in the database, after that continuing with making first-cut design class diagrams, then making first-cut sequence diagrams into three-layer sequence diagrams, and ending with communication diagrams.',
@@ -54,7 +64,7 @@ export default {
           category: 'System Analyst'
         },
         {
-          id: 5,
+          id: 6,
           name: 'Advanced Information System Analysis and Design',
           subtitle: '(Based On Lecturer)',
           imageUrl: 'ISAD',
@@ -65,7 +75,7 @@ export default {
           category: 'System Analyst'
         },
         {
-          id: 6,
+          id: 7,
           name: 'KopiJanji',
           imageUrl: 'coffee',
           status: 'In my project called KopiJanji, I created a project about a coffee website and also a place reservation to go to the place, where in the process of creating this website I used simple HTML, CSS, and JavaScript languages ​​to create a coffee website.',
@@ -75,7 +85,7 @@ export default {
           category: 'Web & Application Development'
         },
         {
-          id: 7,
+          id: 8,
           name: 'Calculator Web',
           imageUrl: 'calc',
           status: 'In this Calculator Website Project, I use ReactJS as a framework for the website, then I use switch case for calculation logic such as +, -, :, *',
@@ -85,7 +95,7 @@ export default {
           category: 'Web & Application Development'
         },
         {
-          id: 8,
+          id: 9,
           name: 'TokoNesia',
           imageUrl: 'TOKONESIA',
           status: 'E-commerce website development inspired by Tokopedia. This project uses front-end technologies including HTML for structure, CSS for styling, and JavaScript for interactivity. Focus on creating a responsive and functional user interface.',
@@ -95,7 +105,7 @@ export default {
           category: 'Web & Application Development'
         },
         {
-          id: 9,
+          id: 10,
           name: 'Nikmat Nusantara',
           imageUrl: 'NIKMANTARA',
           status: 'UI/UX design project for an Indonesian food delivery app. Involves homepage design, app concept development, and design ideation. Key features include a discount voucher system and multiple payment options. The process continues to the prototyping stage.',
@@ -105,7 +115,7 @@ export default {
           category: 'UI/UX Designer'
         },
         {
-          id: 10,
+          id: 11,
           name: 'Re-design Krealogi',
           imageUrl: 'krea',
           status: 'In this Re-design project, I worked on creating materials for each class, besides that I created several pre-tests for users after completing the materials, and finally I used the discussion forum section in each class that had been attended.',
@@ -115,7 +125,7 @@ export default {
           category: 'UI/UX Designer'
         },
         {
-          id: 11,
+          id: 12,
           name: 'SQL Server Management',
           imageUrl: 'DB',
           status: 'In this Database Project I created a database named YOcholatos. In this project I created an ERD (Entity Relationship Diagram) and I also learned to create several database tables as well as enter values ​​into the database which will then be used to process data and search for the data needed.',
@@ -125,7 +135,7 @@ export default {
           category: 'Database'
         },
         {
-          id: 12,
+          id: 13,
           name: 'Java',
           imageUrl: 'Java',
           status: 'Java project implementing OOP, JavaFX, data validation, GUI, and database connection using SQL Server and PhpMyAdmin via XAMPP.',
