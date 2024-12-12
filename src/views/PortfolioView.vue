@@ -35,9 +35,9 @@ export default {
         },
         {
           id: 3,
-          name: 'Advanced Bussiness Application Development',
-          imageUrl: 'Advanced',
-          status: 'In the project, my group and I worked on various tasks, starting from making activity diagrams, use case descriptions, system sequence diagrams, then making system architecture designs and continuing with system design in the database, after that continuing with making first-cut design class diagrams, then making first-cut sequence diagrams into three-layer sequence diagrams, and ending with communication diagrams.',
+          name: 'Advanced Business Application Development',
+          imageUrl: 'jawi',
+          status: 'on-progress',
           tech: 'Visual Paradigm, Figma',
           github: 'null',
           demo: 'https://docs.google.com/document/d/1N3_uHHTMOdCCwSxsjSmckIte1EuCT9EgNzMtsMABpZQ/edit?usp=sharing',
