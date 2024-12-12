@@ -58,10 +58,10 @@ export default {
           name: 'Advanced Information System Analysis and Design',
           subtitle: '(Based On Lecturer)',
           imageUrl: 'ISAD',
-          status: 'H',
+          status: 'In this project, I worked with a team to analyze XYZ company. We started by creating a narrative or user story, then developed use cases, domain model class diagrams, and initial table designs (with primary keys, foreign keys, and association classes). We also built a relational database and designed an input system. Next, we created class diagrams, sequence diagrams, multilayer sequence diagrams, communication diagrams, and ended with a package diagram to describe the overall system structure and flow.',
           tech: 'Visual Paradigm, Figma',
           github: 'null',
-          demo: 'https://docs.google.com/document/d/1N3_uHHTMOdCCwSxsjSmckIte1EuCT9EgNzMtsMABpZQ/edit?usp=sharing',
+          demo: 'https://docs.google.com/document/d/13_UeFYGdb7BxMDGQQfcNcF8m6CIB7c55/edit?usp=drive_link&ouid=102557636400634779308&rtpof=true&sd=true',
           category: 'System Analyst'
         },
         {
