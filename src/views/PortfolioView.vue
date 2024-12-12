@@ -107,7 +107,7 @@ export default {
         {
           id: 10,
           name: 'Re-design Krealogi',
-          imageUrl: 'Krealogi',
+          imageUrl: 'Krea',
           status: 'In this Re-design project, I worked on creating materials for each class, besides that I created several pre-tests for users after completing the materials, and finally I used the discussion forum section in each class that had been attended.',
           tech: 'Figma',
           github: 'null',
