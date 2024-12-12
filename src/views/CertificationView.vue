@@ -105,8 +105,18 @@ export default {
       selectedCategory: 'All',
       categories: ['All', 'Cloud Computing', 'Web Development', 'Data Science', 'Google', 'Product Management', 'UI/UX Design'],
       certificates: [
-        {
+      {
           id: 1,
+          name: 'AWS Academy Data Architecting',
+          issuer: 'Amazon Web Services',
+          issueDate: 'December 2024',
+          description: 'In Cloud Architecting, I learned to design and implement scalable, secure, and cost-efficient cloud infrastructure solutions. This includes selecting appropriate cloud services, creating architectural blueprints, and ensuring compliance with industry standards and best practices. My experience involves optimizing performance, enhancing system reliability, and enabling seamless integration for diverse business needs.',
+          credentialUrl: 'https://www.credly.com/earner/earned/badge/d0642114-1f2a-4355-a05a-7ed41ef8d3a7',
+          badgeImage: 'img/Badge-architecting.png',
+          category: 'Cloud Computing'
+        },
+        {
+          id: 2,
           name: 'AWS Academy Data Engineering',
           issuer: 'Amazon Web Services',
           issueDate: 'October 2024',
@@ -116,7 +126,7 @@ export default {
           category: 'Cloud Computing'
         },
         {
-          id: 2,
+          id: 3,
           name: 'AWS Academy Machine Learning Foundations',
           issuer: 'Amazon Web Services',
           issueDate: 'October 2024',
@@ -126,7 +136,7 @@ export default {
           category: 'Cloud Computing'
         },
         {
-          id: 3,
+          id: 4,
           name: 'Web Developer Series 6.0 - Frontend',
           issuer: 'Dibimbing.Id',
           issueDate: 'October 2024',
@@ -135,7 +145,7 @@ export default {
           category: 'Web Development'
         },
         {
-          id: 4,
+          id: 5,
           name: 'Full Stack Web Development',
           issuer: 'Rakamin Academy',
           issueDate: 'September 2024',
@@ -144,7 +154,7 @@ export default {
           category: 'Web Development'
         },
         {
-          id: 5,
+          id: 6,
           name: 'Data Science',
           issuer: 'Rakamin Academy',
           issueDate: 'September 2024',
@@ -153,7 +163,7 @@ export default {
           category: 'Data Science'
         },
         {
-          id: 6,
+          id: 7,
           name: 'Product Management',
           issuer: 'Rakamin Academy',
           issueDate: 'September 2024',
@@ -162,7 +172,7 @@ export default {
           category: 'Product Management'
         },
         {
-          id: 7,
+          id: 8,
           name: 'Fundamental of Digital Marketing',
           issuer: 'Google Digital Academy',
           issueDate: 'September 2024',
@@ -172,7 +182,7 @@ export default {
           category: 'Google'
         },
         {
-          id: 8,
+          id: 9,
           name: 'Google Analytics',
           issuer: 'Google Digital Academy',
           issueDate: 'September 2024',
@@ -182,7 +192,7 @@ export default {
           category: 'Google'
         },
         {
-          id: 9,
+          id: 10,
           name: 'AWS Academy Cloud Foundations',
           issuer: 'Amazon Web Services',
           issueDate: 'June 2024',
@@ -192,7 +202,7 @@ export default {
           category: 'Cloud Computing'
         },
         {
-          id: 10,
+          id: 11,
           name: 'Competition FINDIT 2024',
           issuer: 'KMTETI FT UGM',
           issueDate: 'May 2024',

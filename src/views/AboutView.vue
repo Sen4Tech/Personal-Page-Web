@@ -54,30 +54,42 @@ export default {
         },
         {
           id: 9,
+          name: 'React Native',
+          imageUrl: 'https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png',
+          status: 'Intermediate'
+        },
+        {
+          id: 10,
+          name: 'TypeScript',
+          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png',
+          status: 'Beginner'
+        },
+        {
+          id: 11,
           name: 'C#',
           imageUrl: 'https://exceptionnotfound.net/content/images/2020/09/C_Sharp_logo.svg',
           status: 'Intermediate'
         },
         {
-          id: 10,
+          id: 12,
           name: '.NET Core',
           imageUrl: 'https://cdn.pellerex.com/public/ecosystem/web/content/api-set-up/asp-net-core-web-api-setup.png',
           status: 'Intermediate'
         },
         {
-          id: 11,
+          id: 13,
           name: 'VueJS',
           imageUrl: 'https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/367_Vuejs_logo-1024.png',
           status: 'Intermediate'
         },
         {
-          id: 12,
+          id: 14,
           name: 'Python',
           imageUrl: 'https://cdn3.iconfinder.com/data/icons/logos-and-brands-adobe/512/267_Python-1024.png',
           status: 'Beginner'
         },
         {
-          id: 13,
+          id: 15,
           name: 'NodeJS',
           imageUrl: 'https://cdn.iconscout.com/icon/free/png-256/free-node-js-1174925.png',
           status: 'Beginner'
