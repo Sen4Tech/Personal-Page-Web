@@ -320,6 +320,7 @@ svg:hover{
 .item-card .portfolio-image img {
   transition: transform 0.3s ease;
   transform-origin: center;
+  max-height: 300px;  
 }
 
 .item-card:hover .portfolio-image img {
