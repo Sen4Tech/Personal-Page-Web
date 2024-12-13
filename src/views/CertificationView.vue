@@ -103,7 +103,7 @@ export default {
   data() {
     return {
       selectedCategory: 'All',
-      categories: ['All', 'Cloud Computing', 'Web Development', 'Data Science', 'Google', 'Product Management', 'UI/UX Design'],
+      categories: ['All', 'Cloud Computing', 'Web Development', 'UI/UX Design'],
       certificates: [
       {
           id: 1,
@@ -155,44 +155,6 @@ export default {
         },
         {
           id: 6,
-          name: 'Data Science',
-          issuer: 'Rakamin Academy',
-          issueDate: 'September 2024',
-          description: 'In Data Science, I learned to collect, analyze, and visualize data to identify patterns, make predictions, and support data-driven decision making.',
-          badgeImage: 'img/DS.png',
-          category: 'Data Science'
-        },
-        {
-          id: 7,
-          name: 'Product Management',
-          issuer: 'Rakamin Academy',
-          issueDate: 'September 2024',
-          description: 'In Product Management, I learned to design product strategies, manage product lifecycles, and collaborate with cross-functional teams to develop solutions that meet user needs and business goals.',
-          badgeImage: 'img/PM.png',
-          category: 'Product Management'
-        },
-        {
-          id: 8,
-          name: 'Fundamental of Digital Marketing',
-          issuer: 'Google Digital Academy',
-          issueDate: 'September 2024',
-          description: 'In Google Analytics, I learned to analyze web traffic data, track user behavior, and measure site performance to help make data-driven decisions and optimize digital strategies.',
-          credentialUrl:'https://skillshop.exceedlms.com/student/award/a6n9zG7kUkjT7UAS39RFUL3T',
-          badgeImage: 'img/Sertifikat DG.png',
-          category: 'Google'
-        },
-        {
-          id: 9,
-          name: 'Google Analytics',
-          issuer: 'Google Digital Academy',
-          issueDate: 'September 2024',
-          description: 'In Google Analytics, I learned to analyze web traffic data, track user behavior, and measure site performance to help make data-driven decisions and optimize digital strategies.',
-          credentialUrl:'https://skillshop.credential.net/5ff84823-9a03-43e0-a587-5d1b82b14a81#gs.fgrn9p',
-          badgeImage: 'img/Sertifikat GA.png',
-          category: 'Google'
-        },
-        {
-          id: 10,
           name: 'AWS Academy Cloud Foundations',
           issuer: 'Amazon Web Services',
           issueDate: 'June 2024',
@@ -202,7 +164,7 @@ export default {
           category: 'Cloud Computing'
         },
         {
-          id: 11,
+          id: 7,
           name: 'Competition FINDIT 2024',
           issuer: 'KMTETI FT UGM',
           issueDate: 'May 2024',

@@ -37,10 +37,10 @@ export default {
           id: 3,
           name: 'Advanced Business Application Development',
           imageUrl: 'jawi',
-          status: 'on-progress',
+          status: 'In this project, my group and I analyzed a Javanese and Betawi cuisine restaurant through interviews with the owner and staff. After knowing the problems, we implemented technologies such as online payment, QR scan ordering, and AI chatbots to improve customer service and experience.',
           tech: 'Visual Paradigm, Figma',
           github: 'null',
-          demo: 'https://docs.google.com/document/d/1N3_uHHTMOdCCwSxsjSmckIte1EuCT9EgNzMtsMABpZQ/edit?usp=sharing',
+          demo: 'https://drive.google.com/drive/folders/1gf7H6VL6Qd6jRMofNtHTi0usVOtzd1Up?usp=sharing',
           category: 'System Analyst'
         },
         {
