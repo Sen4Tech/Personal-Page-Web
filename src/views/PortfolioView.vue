@@ -8,8 +8,8 @@ export default {
         'All',
         'Web & Application Development',
         'System Analyst',
+        'Software Engineering',
         'UI/UX Designer',
-        'Desktop Application',
         'Database',
       ],
       items: [
@@ -88,7 +88,7 @@ export default {
           id: 8,
           name: 'Calculator Web',
           imageUrl: 'calc',
-          status: 'In this Calculator Website Project, I use ReactJS as a framework for the website, then I use switch case for calculation logic such as +, -, :, *',
+          status: 'In this Calculator Website Project, I use ReactJS as the main framework to build the user interface, which ensures a dynamic and responsive experience for the user. The core calculation logic, including operations such as addition (+), subtraction (-), multiplication (*), and division (:), is implemented using a switch case structure.',
           tech: 'ReactJS, Tailwind, Github, Git',
           github: 'https://github.com/Sen4Tech/CalculatorApp',
           demo: 'https://calculator-app-kappa-ruddy.vercel.app/',
@@ -96,6 +96,16 @@ export default {
         },
         {
           id: 9,
+          name: 'Binuskop',
+          imageUrl: 'binuskop',
+          status: 'The Binuskop project is a website development that allows users to buy movie tickets and choose seats. We use ReactJS and Bootstrap for the front-end, and ExpressJS and SequelizeJS for the back-end and for Development and Implementation We use Agile methods to ensure optimal results.',
+          tech: 'ReactJS, Bootstrap, SequelizeJS, ExpressJS, Dbeaver',
+          github: 'https://github.com/Sen4Tech/SOFTWARE-ENGINEERING_OKTAVIANUS',
+          demo: 'null',
+          category: 'Software Engineering'
+        },
+        {
+          id: 10,
           name: 'TokoNesia',
           imageUrl: 'TOKONESIA',
           status: 'E-commerce website development inspired by Tokopedia. This project uses front-end technologies including HTML for structure, CSS for styling, and JavaScript for interactivity. Focus on creating a responsive and functional user interface.',
@@ -105,7 +115,7 @@ export default {
           category: 'Web & Application Development'
         },
         {
-          id: 10,
+          id: 11,
           name: 'Nikmat Nusantara',
           imageUrl: 'NIKMANTARA',
           status: 'UI/UX design project for an Indonesian food delivery app. Involves homepage design, app concept development, and design ideation. Key features include a discount voucher system and multiple payment options. The process continues to the prototyping stage.',
@@ -115,7 +125,7 @@ export default {
           category: 'UI/UX Designer'
         },
         {
-          id: 11,
+          id: 12,
           name: 'Re-design Krealogi',
           imageUrl: 'krea',
           status: 'In this Re-design project, I worked on creating materials for each class, besides that I created several pre-tests for users after completing the materials, and finally I used the discussion forum section in each class that had been attended.',
@@ -125,7 +135,7 @@ export default {
           category: 'UI/UX Designer'
         },
         {
-          id: 12,
+          id: 13,
           name: 'SQL Server Management',
           imageUrl: 'DB',
           status: 'In this Database Project I created a database named YOcholatos. In this project I created an ERD (Entity Relationship Diagram) and I also learned to create several database tables as well as enter values ​​into the database which will then be used to process data and search for the data needed.',
@@ -135,14 +145,14 @@ export default {
           category: 'Database'
         },
         {
-          id: 13,
+          id: 14,
           name: 'Java',
           imageUrl: 'Java',
-          status: 'Java project implementing OOP, JavaFX, data validation, GUI, and database connection using SQL Server and PhpMyAdmin via XAMPP.',
+          status: 'This Java Project utilizes OOP principles, features a GUI built with JavaFX, and includes data validation for reliable inputs. It connects to a database using SQL Server and integrates with PhpMyAdmin via XAMPP for efficient data management.',
           tech: 'Java, JavaFX, SQL Server, Eclipse, XAMPP, Github, Git',
           github: 'https://github.com/Okta-jpg/Java',
           demo: 'null',
-          category: 'Desktop Application'
+          category: 'Web & Application Development'
         },
       ]
     };
