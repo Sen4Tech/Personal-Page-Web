@@ -48,15 +48,15 @@
           </div>
           <div class="h-[1px] mt-7 mb-7 w-20 bg-[#0ef] aos-init aos-animate mr-2"></div>
           <div class="md:block">
-            <div class="text-white text-md font-semibold">Categories</div>
+            <div class="text-white text-lg font-semibold">Categories</div>
             <div class="mt-3 flex flex-wrap gap-1 relative z-50">
               <span v-for="category in categories" 
                     :key="category"
                     :class="[
-                      'py-2 px-3 rounded-2xl text-xs cursor-pointer border border-[#0ef]',
+                         'px-4 py-1 rounded-lg transition-all duration-300 z-50 border border-[#0ef] fadein-bot text-sm',
                       selectedCategory === category 
-                        ? 'bg-[#0ef] text-black' 
-                        : 'bg-[#1e1e1f] text-white hover:bg-white/20'
+                          ? 'bg-[#0ef] text-black' 
+                          : 'bg-[#282828] text-[#0ef] hover:bg-[#0ef] hover:text-black'
                     ]"
                     @click="selectedCategory = category">
                 {{ category }}

@@ -200,26 +200,31 @@ export default {
         },
         {
           id: 4,
+          name: 'Public Speaking',
+          imageUrl: 'https://cdn3.iconfinder.com/data/icons/human-resources-1-5/136/78-1024.png',
+        },
+        {
+          id: 5,
           name: 'Critical Thinking',
           imageUrl: 'https://www.freepnglogos.com/uploads/thinking-png/thinking-home-page-deeper-learning-31.png',
         },
         {
-          id: 5,
+          id: 6,
           name: 'Problem Solving',
           imageUrl: 'https://cdn-icons-png.flaticon.com/512/6487/6487594.png',
         },
         {
-          id: 6,
+          id: 7,
           name: 'Leadership',
           imageUrl: 'https://cdn1.iconfinder.com/data/icons/human-resource-8/64/leadership-skills-leader-team-1024.png',
         },
         {
-          id: 7,
+          id: 8,
           name: 'Adaptive',
           imageUrl: 'https://i.pinimg.com/originals/d7/1b/70/d71b703a681d8674bec810570ab1809a.png',
         },
         {
-          id: 8,
+          id: 9,
           name: 'Creative',
           imageUrl: 'https://pnghq.com/wp-content/uploads/3d-creative-learning-illustration-with-transparent-background-8497258-png.png',
         },
