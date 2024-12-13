@@ -182,6 +182,48 @@ export default {
         },
         
       ],
+      soft: [
+        {
+          id: 1,
+          name: 'Time Management',
+          imageUrl: 'https://static.vecteezy.com/system/resources/previews/013/468/392/original/clock-time-line-icon-png.png',
+        },
+        {
+          id: 2,
+          name: 'Communication',
+          imageUrl: 'https://cdn1.iconfinder.com/data/icons/online-education-malibu-vol-1/128/2-way-communication-1024.png',
+        },
+        {
+          id: 3,
+          name: 'Team Work',
+          imageUrl: 'http://clipart-library.com/images_k/teamwork-transparent-background/teamwork-transparent-background-12.png',
+        },
+        {
+          id: 4,
+          name: 'Critical Thinking',
+          imageUrl: 'https://www.freepnglogos.com/uploads/thinking-png/thinking-home-page-deeper-learning-31.png',
+        },
+        {
+          id: 5,
+          name: 'Problem Solving',
+          imageUrl: 'https://cdn-icons-png.flaticon.com/512/6487/6487594.png',
+        },
+        {
+          id: 6,
+          name: 'Leadership',
+          imageUrl: 'https://cdn1.iconfinder.com/data/icons/human-resource-8/64/leadership-skills-leader-team-1024.png',
+        },
+        {
+          id: 7,
+          name: 'Adaptive',
+          imageUrl: 'https://i.pinimg.com/originals/d7/1b/70/d71b703a681d8674bec810570ab1809a.png',
+        },
+        {
+          id: 8,
+          name: 'Creative',
+          imageUrl: 'https://pnghq.com/wp-content/uploads/3d-creative-learning-illustration-with-transparent-background-8497258-png.png',
+        },
+      ]
     };
   }
 
@@ -247,6 +289,10 @@ export default {
               <button class="inline-block px-4 py-3 rounded-lg hover:text-[#0ef]"
                 :class="{ 'text-[#0ef] bg-[#0ef] bg-opacity-10': activeTab === 2 }" @click="activeTab = 2">Tools</button>
             </li>
+            <li class="mr-2 z-[100]">
+              <button class="inline-block px-4 py-3 rounded-lg hover:text-[#0ef]"
+                :class="{ 'text-[#0ef] bg-[#0ef] bg-opacity-10': activeTab === 3 }" @click="activeTab = 3">Soft Skills</button>
+            </li>
           </ul>
         </div>
         <div v-show="activeTab === 1">
@@ -286,6 +332,24 @@ export default {
                   <div
                     class="status-tech opacity-0 absolute mt-5 text-[10px] text-[#0ef] transition-all duration-300 md:text-xs lg:text-sm">
                     {{ item.status }}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div v-show="activeTab === 3">
+          <div class="grid grid-cols-2 gap-4 pb-32 md:grid-cols-3 md:gap-8 xl:grid-cols-4 xl:gap-10 2xl:gap-12">
+            <div v-for="item in soft" :key="item.id">
+              <div
+                class="item-tech flex cursor-pointer items-center gap-2 rounded border border-[#0ef] px-2 py-2 hover:bg-[#0ef] hover:bg-opacity-10 md:gap-3 lg:px-3 bg-[#1e1e1f]">
+                <div class="flex h-12 w-12 items-center justify-center p-0 lg:h-16 lg:w-16 lg:p-2 zoom-in">
+                  <img alt="HTML" loading="lazy" width="32" height="32" decoding="async" data-nimg="1"
+                    class="img-tech drop-shadow-xl transition-all duration-300 h-[65%] w-[65%] lg:h-[85%] lg:w-[85%]  "
+                    :src="item.imageUrl" style="color: transparent;">
+                </div>
+                <div class="flex items-center text-sm md:text-base lg:text-lg">
+                  <div class="techSoft font-medium text-secondary transition-all duration-300 translate-y-0 ">{{ item.name }}
+                  </div>
                 </div>
               </div>
             </div>
