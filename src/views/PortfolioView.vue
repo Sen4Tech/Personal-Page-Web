@@ -96,7 +96,7 @@ export default {
         },
         {
           id: 9,
-          name: 'Binuskop',
+          name: 'Binuskop Website',
           imageUrl: 'binuskop',
           status: 'The Binuskop project is a website development that allows users to buy movie tickets and choose seats. We use ReactJS and Bootstrap for the front-end, and ExpressJS and SequelizeJS for the back-end and for Development and Implementation We use Agile methods to ensure optimal results.',
           tech: 'ReactJS, Bootstrap, SequelizeJS, ExpressJS, Dbeaver',
