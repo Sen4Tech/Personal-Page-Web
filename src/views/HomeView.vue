@@ -40,7 +40,7 @@ export default {
   name: 'HomeView',
   data() {
     return {
-      toRotate: ["Web Developer", "System Analyst","UI/UX Enthusiast","Front-End Developer"],
+      toRotate: ["System Analyst", "Web Developer","UI/UX Designer", "Information Systems"],
       period: 2000,
       txt: '',
       loopNum: 0,
