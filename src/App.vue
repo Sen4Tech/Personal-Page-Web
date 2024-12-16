@@ -6,7 +6,7 @@
     <nav class="max-w-7xl px-5 md:fixed top-0 z-[100] w-screen backdrop-blur-md bg-[#1f242d] bg-opacity-80">
       <div class="container mx-auto flex flex-wrap items-center justify-between">
         <button @click="redirectToHome" class="flex">
-          <a href="/"><span class="self-center text-lg text-[#0ef] font-semibold whitespace-nowrap fadein-bot hover:text-cyan-100">My Portfolio</span></a>
+          <a href="/"><span class="self-center text-lg text-[#0ef] font-semibold whitespace-nowrap fadein-bot hover:text-cyan-100 title">My Portfolio</span></a>
         </button>
         <div class="flex md:order-2 fadein-bot gap-2">
           <a href="https://www.linkedin.com/in/oktavianuschen"><img class="w-9 rounded-full" src="https://logospng.org/download/linkedin/logo-linkedin-icon-1536.png" alt="linked"></a>
@@ -25,8 +25,8 @@
                 class="fadein-bot fadein-1 text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-gray-500 md:p-0 ">About</router-link>
             </li>
             <li>
-              <router-link to="/portfolio"
-                class="fadein-bot fadein-2 text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-gray-500 md:p-0">Portfolio</router-link>
+              <router-link to="/project"
+                class="fadein-bot fadein-2 text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-gray-500 md:p-0">Project</router-link>
             </li>
             <li>
               <router-link to="/certification"
@@ -49,7 +49,7 @@
   <nav class="flex justify-around py-4 text-xs">
     <router-link to="/" class="text-gray-300 hover:text-white ">Home</router-link>
     <router-link to="/about" class="text-gray-300 hover:text-white">About</router-link>
-    <router-link to="/portfolio" class="text-gray-300 hover:text-white">Portfolio</router-link>
+    <router-link to="/project" class="text-gray-300 hover:text-white">Project</router-link>
     <router-link to="/certification" class="text-gray-300 hover:text-white">Certification</router-link>
     <router-link to="/experience" class="text-gray-300 hover:text-white">Experience</router-link>
   </nav>
@@ -147,6 +147,7 @@ nav {
   padding: 30px;
 }
 
+
 nav a {
   font-weight: bold;
   color: #2c3e50;
@@ -187,10 +188,6 @@ nav a.router-link-exact-active::after {
   height: 4px;
   border-radius: 2px;
   background-color: #0ef;
-}
-
-nav a.router-link-exact-active:hover {
-  color: #0ef;
 }
 
 

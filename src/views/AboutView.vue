@@ -258,14 +258,13 @@ export default {
         </div>
         <div class="md:w-9/12">
           <p class="mb-3 md:mb-7 fadein-left fadeins-1">
-            &nbsp; &nbsp; &nbsp; A 5th semester Information Systems student at Bina Nusantara University with a focus on web development and cloud computing. 20 years old with a strong passion for creating innovative and scalable web applications. Actively developing skills in front-end, back-end technologies, and cloud solution-based implementation. The goal is to make significant contributions in web development projects that prioritize user experience and performance. Open to internship opportunities, collaborative projects, and discussions on the latest developments in the field of web development and cloud computing.
+            &nbsp; &nbsp; &nbsp; Hello, my name is Oktavianus!👋 
+          </p>
+          <p class="mb-3 md:mb-7 fadein-left fadeins-1">
+            &nbsp; &nbsp; &nbsp; I am 20 years old and a 5th semester student studying at Bina Nusantara University majoring in Information Systems. Technology is my passion, with my main focus as a System Analyst and Front End Developer.
           </p>
           <p class="mb-3 fadein-left fadeins-2">
-            &nbsp; &nbsp; &nbsp; My job is to build your website to be functional and user-friendly yet still attractive.
-            In addition, I provide a personal touch to your product and ensure that the website catches attention and is
-            easy to use.
-            My goal is to convey your message and identity in the most creative way. If you are interested in hiring me,
-            please contact the listed contact.
+            &nbsp; &nbsp; &nbsp; I have strong expertise in System Analysis and front-end development, while my ability in Cloud Computing has reached an intermediate level. I have the passion to continue learning and developing technological skills, and creating innovative solutions through my information technology expertise. My academic journey at Binus University is not just about getting a degree, but about preparing myself to become a competent and creative technology professional in the future.
           </p>
         </div>
 

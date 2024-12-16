@@ -15,10 +15,10 @@ const routes = [
     meta: { title: 'About' }
   },
   {
-    path: '/portfolio',
-    name: 'portfolio',
+    path: '/project',
+    name: 'project',
     component: () => import('../views/PortfolioView.vue'),
-    meta: { title: 'Portfolio' }
+    meta: { title: 'Project' }
   },
   {
     path: '/certification',
