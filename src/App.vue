@@ -151,6 +151,25 @@ nav a {
   font-weight: bold;
   color: #2c3e50;
   transition: color 0.3s;
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 4px;
+  border-radius: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #0ef;
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
 }
 
 nav a.router-link-exact-active {
