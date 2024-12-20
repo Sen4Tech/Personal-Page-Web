@@ -19,8 +19,8 @@ export default {
           imageUrl: 'personal',
           status: 'My personal website, I created this website to showcase my profile, skills and projects. In addition, this website is also a place for me to try new technologies where I use github, git, vue.js, javascript, html and css technologies.',
           tech: 'Vue.js, Tailwind, Github, Git',
-          github: 'https://github.com/Sen4Tech/My-Portfolio',
-          demo: 'null',
+          github: 'https://github.com/Sen4Tech/Personal-Page-Web',
+          demo: 'https://personal-page-nine.vercel.app/',
           category: 'Web & Application Development'
         },
         {
