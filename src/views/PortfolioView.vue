@@ -49,7 +49,7 @@ export default {
           imageUrl: 'Movies',
           status: 'In this project, I integrated a movie database by consuming its API to fetch movie data. Using ReactJS, I created a container component to display the movies dynamically. The component manages the state and renders the movie details like title, genre, and rating. I also added features like pagination or infinite scrolling for efficient data handling and an improved user experience.',
           tech: 'ReactJS, HTML, CSS, GitHub, Git',
-          github: 'https://github.com/Okta-jpg/XXI-MOVIES',
+          github: 'https://github.com/Sen4Tech/XXI-MOVIES',
           demo: 'https://xxi-movies.vercel.app/',
           category: 'Web & Application Development'
         },
@@ -80,7 +80,7 @@ export default {
           imageUrl: 'coffee',
           status: 'In my project called KopiJanji, I created a project about a coffee website and also a place reservation to go to the place, where in the process of creating this website I used simple HTML, CSS, and JavaScript languages ​​to create a coffee website.',
           tech: 'HTML, CSS, JavaScript, Github, Git',
-          github: 'https://github.com/Okta-jpg/kopi-janji',
+          github: 'https://github.com/Sen4Tech/kopi-janji',
           demo: 'https://kopi-janji-cozy.vercel.app/',
           category: 'Web & Application Development'
         },
@@ -106,16 +106,26 @@ export default {
         },
         {
           id: 10,
-          name: 'TokoNesia',
-          imageUrl: 'TOKONESIA',
-          status: 'E-commerce website development inspired by Tokopedia. This project uses front-end technologies including HTML for structure, CSS for styling, and JavaScript for interactivity. Focus on creating a responsive and functional user interface.',
-          tech: 'HTML, CSS, JavaScript, Github, Git',
-          github: 'https://github.com/Okta-jpg/TokoNesia',
-          demo: 'https://toko-nesia.vercel.app/',
+          name: 'Website RentCars',
+          imageUrl: 'RENT',
+          status: 'In the RentCars Website Project, I use the C# Tech Stack as the Front End and ASP.NET as the Back End, where SQL Server is the Database. In this project, I created a car rental website where users can choose the rental date, rental end date and year of manufacture of the car, and then on the Front End side, I call the data in the database using JQuery.',
+          tech: 'C#, ASP.NET, SQL Server, HTML, CSS, GIthub, Git',
+          github: 'https://github.com/Sen4Tech/RentCars',
+          demo: 'null',
           category: 'Web & Application Development'
         },
         {
           id: 11,
+          name: 'TokoNesia',
+          imageUrl: 'TOKONESIA',
+          status: 'E-commerce website development inspired by Tokopedia. This project uses front-end technologies including HTML for structure, CSS for styling, and JavaScript for interactivity. Focus on creating a responsive and functional user interface.',
+          tech: 'HTML, CSS, JavaScript, Github, Git',
+          github: 'https://github.com/Sen4Tech/TokoNesia',
+          demo: 'https://toko-nesia.vercel.app/',
+          category: 'Web & Application Development'
+        },
+        {
+          id: 12,
           name: 'Nikmat Nusantara',
           imageUrl: 'NIKMANTARA',
           status: 'UI/UX design project for an Indonesian food delivery app. Involves homepage design, app concept development, and design ideation. Key features include a discount voucher system and multiple payment options. The process continues to the prototyping stage.',
@@ -125,7 +135,7 @@ export default {
           category: 'UI/UX Designer'
         },
         {
-          id: 12,
+          id: 13,
           name: 'Re-design Krealogi',
           imageUrl: 'krea',
           status: 'In this Re-design project, I worked on creating materials for each class, besides that I created several pre-tests for users after completing the materials, and finally I used the discussion forum section in each class that had been attended.',
@@ -135,22 +145,22 @@ export default {
           category: 'UI/UX Designer'
         },
         {
-          id: 13,
+          id: 14,
           name: 'SQL Server Management',
           imageUrl: 'DB',
           status: 'In this Database Project I created a database named YOcholatos. In this project I created an ERD (Entity Relationship Diagram) and I also learned to create several database tables as well as enter values ​​into the database which will then be used to process data and search for the data needed.',
           tech: 'SQL Server, Visual Paradigm, Github, Git',
-          github: 'https://github.com/Okta-jpg/SQL-Server',
+          github: 'https://github.com/Sen4Tech/SQL-Server',
           demo: 'null',
           category: 'Database'
         },
         {
-          id: 14,
+          id: 15,
           name: 'Java',
           imageUrl: 'Java',
           status: 'This Java Project utilizes OOP principles, features a GUI built with JavaFX, and includes data validation for reliable inputs. It connects to a database using SQL Server and integrates with PhpMyAdmin via XAMPP for efficient data management.',
           tech: 'Java, JavaFX, SQL Server, Eclipse, XAMPP, Github, Git',
-          github: 'https://github.com/Okta-jpg/Java',
+          github: 'https://github.com/Sen4Tech/Java',
           demo: 'null',
           category: 'Web & Application Development'
         },
