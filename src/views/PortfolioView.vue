@@ -108,7 +108,7 @@ export default {
           id: 10,
           name: 'Website RentCars',
           imageUrl: 'RENT',
-          status: 'In the RentCars Website Project, I use the C# Tech Stack as the Front End and ASP.NET as the Back End, where SQL Server is the Database. In this project, I created a car rental website where users can choose the rental date, rental end date and year of manufacture of the car, and then on the Front End side, I call the data in the database using JQuery.',
+          status: 'In the RentCars Website Project, I use the ASP.NET Framework. In this project, I created a car rental website where users can choose the rental date, rental end date and year of manufacture of the car and then on the front end I call the data in the database using JQuery.',
           tech: 'C#, ASP.NET, SQL Server, HTML, CSS, GIthub, Git',
           github: 'https://github.com/Sen4Tech/RentCars',
           demo: 'null',
