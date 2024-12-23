@@ -17,24 +17,24 @@
           <ul class="flex-col md:flex-row flex md:space-x-8 mt-4 md:mt-0 md:text-sm md:font-medium">
             <li>
               <router-link to="/"
-                class="fadein-bot text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-gray-500 md:p-0"
+                class="nav-link fadein-bot text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-gray-500 md:p-0"
                 aria-current="page">Home</router-link>
             </li>
             <li>
               <router-link to="/about"
-                class="fadein-bot fadein-1 text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-gray-500 md:p-0 ">About</router-link>
+                class="nav-link fadein-bot fadein-1 text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-gray-500 md:p-0 ">About</router-link>
             </li>
             <li>
               <router-link to="/project"
-                class="fadein-bot fadein-2 text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-gray-500 md:p-0">Project</router-link>
+                class="nav-link fadein-bot fadein-2 text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-gray-500 md:p-0">Project</router-link>
             </li>
             <li>
               <router-link to="/certification"
-                class="fadein-bot fadein-3 text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-gray-500 md:p-0 blog">Certification</router-link>
+                class="nav-link fadein-bot fadein-3 text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-gray-500 md:p-0 blog">Certification</router-link>
             </li>
             <li>
               <router-link to="/experience"
-                class="fadein-bot fadein-3 text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-gray-500 md:p-0 blog">Experience</router-link>
+                class="nav-link fadein-bot fadein-3 text-gray-700 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-gray-500 md:p-0 blog">Experience</router-link>
             </li>
           </ul>
         </div>
@@ -46,13 +46,14 @@
     </div>
   </div>
   <footer class="block md:hidden fixed bottom-0 left-0 right-0 rounded-t-3xl border border-[#383838] bg-[#1e1e1f] bg-opacity-80 backdrop-blur-md backdrop-opacity-90 z-[100]">
-  <nav class="flex justify-around py-4 text-xs">
-    <router-link to="/" class="text-gray-300 hover:text-white ">Home</router-link>
-    <router-link to="/about" class="text-gray-300 hover:text-white">About</router-link>
-    <router-link to="/project" class="text-gray-300 hover:text-white">Project</router-link>
-    <router-link to="/certification" class="text-gray-300 hover:text-white">Certification</router-link>
-    <router-link to="/experience" class="text-gray-300 hover:text-white">Experience</router-link>
-  </nav>
+    <nav class="flex justify-around py-4 text-xs">
+  <router-link to="/" class="text-gray-300 hover:text-white hover-underline">Home</router-link>
+  <router-link to="/about" class="text-gray-300 hover:text-white hover-underline">About</router-link>
+  <router-link to="/project" class="text-gray-300 hover:text-white hover-underline">Project</router-link>
+  <router-link to="/certification" class="text-gray-300 hover:text-white hover-underline">Certification</router-link>
+  <router-link to="/experience" class="text-gray-300 hover:text-white hover-underline">Experience</router-link>
+</nav>
+
 </footer>
 
 
@@ -157,22 +158,6 @@ nav a {
   text-decoration: none;
 }
 
-nav a::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 4px;
-  border-radius: 2px;
-  bottom: -5px;
-  left: 0;
-  background-color: #0ef;
-  transition: width 0.3s ease;
-}
-
-nav a:hover::after {
-  width: 100%;
-}
-
 nav a.router-link-exact-active {
   display: inline-flex;
   flex-direction: column;
@@ -188,6 +173,32 @@ nav a.router-link-exact-active::after {
   height: 4px;
   border-radius: 2px;
   background-color: #0ef;
+}
+
+.nav-link {
+  position: relative;
+  text-decoration: none;
+  padding-bottom: 2px;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 4px;
+  border-radius: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #0ef;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link.router-link-exact-active::after {
+  width: 100%;
 }
 
 
