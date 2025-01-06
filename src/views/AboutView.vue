@@ -13,7 +13,7 @@ export default {
         {
           id: 2,
           name: 'CSS',
-          imageUrl: 'https://cdn-icons-png.flaticon.com/512/732/732190.png',
+          imageUrl: 'https://i.gzn.jp/img/2024/11/18/css-new-logo/10.png',
           status: 'Advanced'
         },
         {
