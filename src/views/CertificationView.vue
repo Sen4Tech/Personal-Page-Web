@@ -107,6 +107,16 @@ export default {
       certificates: [
       {
           id: 1,
+          name: 'AWS Certified Cloud Practitioner',
+          issuer: 'Amazon Web Services',
+          issueDate: 'January 2025',
+          description: 'In the Process of Getting this Certification, I followed AWS Globally to test my knowledge and understanding in cloud computing.',
+          credentialUrl: 'https://www.credly.com/earner/earned/badge/708bb227-e0e1-4de5-bf89-c31367888345',
+          badgeImage: 'img/Badge-Global.png',
+          category: 'Cloud Computing'
+        },
+      {
+          id: 2,
           name: 'AWS Academy Data Architecting',
           issuer: 'Amazon Web Services',
           issueDate: 'December 2024',
@@ -116,7 +126,7 @@ export default {
           category: 'Cloud Computing'
         },
         {
-          id: 2,
+          id: 3,
           name: 'AWS Academy Data Engineering',
           issuer: 'Amazon Web Services',
           issueDate: 'October 2024',
@@ -126,7 +136,7 @@ export default {
           category: 'Cloud Computing'
         },
         {
-          id: 3,
+          id: 4,
           name: 'AWS Academy Machine Learning Foundations',
           issuer: 'Amazon Web Services',
           issueDate: 'October 2024',
@@ -136,7 +146,7 @@ export default {
           category: 'Cloud Computing'
         },
         {
-          id: 4,
+          id: 5,
           name: 'Web Developer Series 6.0 - Frontend',
           issuer: 'Dibimbing.Id',
           issueDate: 'October 2024',
@@ -145,7 +155,7 @@ export default {
           category: 'Web Development'
         },
         {
-          id: 5,
+          id: 6,
           name: 'Full Stack Web Development',
           issuer: 'Rakamin Academy',
           issueDate: 'September 2024',
@@ -154,7 +164,7 @@ export default {
           category: 'Web Development'
         },
         {
-          id: 6,
+          id: 7,
           name: 'AWS Academy Cloud Foundations',
           issuer: 'Amazon Web Services',
           issueDate: 'June 2024',
@@ -164,7 +174,7 @@ export default {
           category: 'Cloud Computing'
         },
         {
-          id: 7,
+          id: 8,
           name: 'Competition FINDIT 2024',
           issuer: 'KMTETI FT UGM',
           issueDate: 'May 2024',
