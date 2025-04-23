@@ -98,8 +98,21 @@ export default {
       selectedIndustry: 'All',
       industries: ['All', 'Technology', 'Education'],
       experiences: [
-        {
+      {
           id: 1,
+          title: 'Software Engineer Intern',
+          company: 'Sari Tirta Indonesia',
+          companyLogo: 'https://media.licdn.com/dms/image/C560BAQExiLR9waT6eg/company-logo_200_200/0/1672743292777?e=2147483647&v=beta&t=005s9LsZN_HPCwchv3f2TdaMat-wsbiUIh5Q1fKq4oY',
+          startDate: 'Feb 2025',
+          endDate: '',
+          duration: '2 months',
+          location: 'West Jakarta',
+          description: '',
+          skills: ['Progress ABL Edge', 'VueJS', 'AppSheet'],
+          industry: 'Technology'
+        },  
+        {
+          id: 2,
           title: 'Member',
           company: 'GDG BINUS Malang',
           companyLogo: 'https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2.0,f_auto,g_center,h_1080,q_100,w_1080/v1/gcs/platform-data-dsc/events/GDSC-Logo%20(1).png',
@@ -112,7 +125,7 @@ export default {
           industry: 'Technology'
         },
         {
-          id: 2,
+          id: 3,
           title: 'Education Volunteer',
           company: 'Teach For Indonesia',
           companyLogo: 'https://pbs.twimg.com/profile_images/3529569748/56f7f361a544f549a5e4b2c034d7c011_400x400.jpeg',
@@ -125,7 +138,7 @@ export default {
           industry: 'Education'
         },
         {
-          id: 3,
+          id: 4,
           title: 'Education Volunteer',
           company: 'Teach For Indonesia',
           companyLogo: 'https://pbs.twimg.com/profile_images/3529569748/56f7f361a544f549a5e4b2c034d7c011_400x400.jpeg',
@@ -138,7 +151,7 @@ export default {
           industry: 'Education'
         },
         {
-          id: 4,
+          id: 5,
           title: 'Education Volunteer',
           company: 'Teach For Indonesia',
           companyLogo: 'https://pbs.twimg.com/profile_images/3529569748/56f7f361a544f549a5e4b2c034d7c011_400x400.jpeg',

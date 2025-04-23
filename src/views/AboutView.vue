@@ -37,7 +37,7 @@ export default {
         {
           id: 6,
           name: 'Tailwind',
-          imageUrl: 'https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/tailwind-css-icon.png',
+          imageUrl: 'https://cdn.icon-icons.com/icons2/2699/PNG/512/tailwindcss_logo_icon_167923.png',
           status: 'Advanced'
         },
         {
@@ -147,7 +147,7 @@ export default {
         {
           id: 9,
           name: 'Visual Studio',
-          imageUrl: 'https://seeklogo.com/images/V/visual-studio-icon-2022-logo-8E86B4B761-seeklogo.com.png',
+          imageUrl: 'https://i.pinimg.com/originals/fb/9d/99/fb9d99a93b1439bec2ec256b2b4b6533.png',
           status: '.NET Development'
         },
         {
