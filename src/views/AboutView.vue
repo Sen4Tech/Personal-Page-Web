@@ -48,48 +48,54 @@ export default {
         },
         {
           id: 8,
+          name: 'ABL (4GL)',
+          imageUrl: 'https://chriscamicas.gallerycdn.vsassets.io/extensions/chriscamicas/openedge-abl/1.3.0/1708103923701/Microsoft.VisualStudio.Services.Icons.Default',
+          status: 'Intermediate'
+        },
+        {
+          id: 9,
           name: 'ReactJS',
           imageUrl: 'https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png',
           status: 'Intermediate'
         },
         {
-          id: 9,
+          id: 10,
           name: 'React Native',
           imageUrl: 'https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png',
           status: 'Intermediate'
         },
         {
-          id: 10,
+          id: 11,
           name: 'TypeScript',
           imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png',
           status: 'Beginner'
         },
         {
-          id: 11,
+          id: 12,
           name: 'C#',
           imageUrl: 'https://exceptionnotfound.net/content/images/2020/09/C_Sharp_logo.svg',
           status: 'Intermediate'
         },
         {
-          id: 12,
+          id: 13,
           name: '.NET Core',
           imageUrl: 'https://cdn.pellerex.com/public/ecosystem/web/content/api-set-up/asp-net-core-web-api-setup.png',
           status: 'Intermediate'
         },
         {
-          id: 13,
+          id: 14,
           name: 'VueJS',
           imageUrl: 'https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/367_Vuejs_logo-1024.png',
           status: 'Intermediate'
         },
         {
-          id: 14,
+          id: 15,
           name: 'Python',
           imageUrl: 'https://cdn3.iconfinder.com/data/icons/logos-and-brands-adobe/512/267_Python-1024.png',
           status: 'Beginner'
         },
         {
-          id: 15,
+          id: 16,
           name: 'NodeJS',
           imageUrl: 'https://cdn.iconscout.com/icon/free/png-256/free-node-js-1174925.png',
           status: 'Beginner'
@@ -110,72 +116,84 @@ export default {
         },
         {
           id: 3,
-          name: 'Eclipse',
-          imageUrl: 'https://static-00.iconduck.com/assets.00/eclipse-icon-1024x959-y4dm3iv1.png',
-          status: 'Java IDE'
+          name: 'PostgreSQL',
+          imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/1163px-Postgresql_elephant.svg.png',
+          status: 'Database'
         },
         {
           id: 4,
+          name: 'Dev Studio',
+          imageUrl: 'https://chriscamicas.gallerycdn.vsassets.io/extensions/chriscamicas/openedge-abl/1.3.0/1708103923701/Microsoft.VisualStudio.Services.Icons.Default',
+          status: 'ABL IDE'
+        },
+        {
+          id: 5,
+          name: 'Eclipse',
+          imageUrl: 'https://www.nesabamedia.com/wp-content/uploads/2019/09/Eclipse-Logo-1.png',
+          status: 'Java IDE'
+        },
+        {
+          id: 6,
           name: 'Visual Paradigm',
           imageUrl: 'https://img.icons8.com/clouds/140/visual-paradigm.png',
           status: 'System Analyst'
         },
         {
-          id: 5,
+          id: 7,
           name: 'AWS Services',
           imageUrl: 'https://tse3.mm.bing.net/th?id=OIP.zwxmNiuwakQ0v53Zqah1HAHaHa&pid=Api&P=0&h=180',
           status: 'Cloud Computing'
         },
         {
-          id: 6,
+          id: 8,
           name: 'SQL Server',
           imageUrl: 'https://tse2.mm.bing.net/th?id=OIP.zexw0o_09gUZKcBCnkPd1QAAAA&pid=Api&P=0&h=180',
           status: 'Database'
         },
         {
-          id: 7,
+          id: 9,
           name: 'Canva',
           imageUrl: 'https://freelogopng.com/images/all_img/1656733637logo-canva-png.png',
           status: 'Desain'
         },
         {
-          id: 8,
+          id: 10,
           name: 'Vercel',
           imageUrl: 'https://flow-public.nimbuspop.com/flow-apps/vercel.png',
           status: 'Deployment'
         },
         {
-          id: 9,
+          id: 11,
           name: 'Visual Studio',
           imageUrl: 'https://i.pinimg.com/originals/fb/9d/99/fb9d99a93b1439bec2ec256b2b4b6533.png',
           status: '.NET Development'
         },
         {
-          id: 10,
+          id: 12,
           name: 'JupyterLab',
           imageUrl: 'https://cdn-ak.f.st-hatena.com/images/fotolife/i/inabower/20180609/20180609185305.png',
           status: 'Jupyter Notebook'
         },
         {
-          id: 11,
+          id: 13,
           name: 'XAMPP',
           imageUrl: 'https://4.bp.blogspot.com/-YcxyjKjV94U/Vs1ejZFHRmI/AAAAAAAAA08/k72Ngc87yOA/s1600/xampp-logo%2B%25281%2529.jpg',
           status: 'DB Management'
         },
         {
-          id: 12,
+          id: 14,
           name: 'GitHub',
           imageUrl: 'https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png',
           status: 'Git Hosting'
         },
         {
-          id: 13,
+          id: 15,
           name: 'Git',
           imageUrl: 'https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png',
           status: 'Version Control'
         },
         {
-          id: 14,
+          id: 16,
           name: 'NPM',
           imageUrl: 'https://logospng.org/download/npm/npm-2048.png',
           status: 'Package Manager'
@@ -226,7 +244,7 @@ export default {
         {
           id: 9,
           name: 'Creative',
-          imageUrl: 'https://pnghq.com/wp-content/uploads/3d-creative-learning-illustration-with-transparent-background-8497258-png.png',
+          imageUrl: 'https://png.pngtree.com/png-clipart/20240708/original/pngtree-flat-design-of-soft-skills-concept-png-image_15516351.png',
         },
       ]
     };

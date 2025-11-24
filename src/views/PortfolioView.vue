@@ -106,6 +106,26 @@ export default {
         },
         {
           id: 10,
+          name: 'Villora Application',
+          imageUrl: 'villora',
+          status: 'Villora is a special application for renting apartments, hotels, houses or selling, this application was created with the aim of making it easier for users to find the property they want without any information limitations, this application was developed using React Native then the database uses Appwrite.',
+          tech: 'React Native, TypeScript, Appwrite, Github, Git',
+          github: 'https://github.com/Sen4Tech/Villora-App',
+          demo: 'null',
+          category: 'Web & Application Development'
+        },
+        {
+          id: 11,
+          name: 'Hand Gesture Recognition System',
+          imageUrl: 'hand',
+          status: 'In this project I created a hand gesture recognition, where my goal in creating this mini project is to make it easier for people who have hearing impairments to communicate with us, the project uses the Python language with Indonesian TTS',
+          tech: 'Python, OpenCV, MediaPipe, Github, Git',
+          github: 'https://github.com/Sen4Tech/hand-gesture-python',
+          demo: 'null',
+          category: 'Web & Application Development'
+        },
+        {
+          id: 12,
           name: 'Website RentCars',
           imageUrl: 'RENT',
           status: 'In the RentCars Website Project, I use the ASP.NET Framework. In this project, I created a car rental website where users can choose the rental date, rental end date and year of manufacture of the car and then on the front end I call the data in the database using JQuery.',
@@ -115,7 +135,7 @@ export default {
           category: 'Web & Application Development'
         },
         {
-          id: 11,
+          id: 13,
           name: 'TokoNesia',
           imageUrl: 'TOKONESIA',
           status: 'E-commerce website development inspired by Tokopedia. This project uses front-end technologies including HTML for structure, CSS for styling, and JavaScript for interactivity. Focus on creating a responsive and functional user interface.',
@@ -125,7 +145,7 @@ export default {
           category: 'Web & Application Development'
         },
         {
-          id: 12,
+          id: 14,
           name: 'Nikmat Nusantara',
           imageUrl: 'NIKMANTARA',
           status: 'UI/UX design project for an Indonesian food delivery app. Involves homepage design, app concept development, and design ideation. Key features include a discount voucher system and multiple payment options. The process continues to the prototyping stage.',
@@ -135,7 +155,7 @@ export default {
           category: 'UI/UX Designer'
         },
         {
-          id: 13,
+          id: 15,
           name: 'Re-design Krealogi',
           imageUrl: 'krea',
           status: 'In this Re-design project, I worked on creating materials for each class, besides that I created several pre-tests for users after completing the materials, and finally I used the discussion forum section in each class that had been attended.',
@@ -145,7 +165,7 @@ export default {
           category: 'UI/UX Designer'
         },
         {
-          id: 14,
+          id: 16,
           name: 'SQL Server Management',
           imageUrl: 'DB',
           status: 'In this Database Project I created a database named YOcholatos. In this project I created an ERD (Entity Relationship Diagram) and I also learned to create several database tables as well as enter values ​​into the database which will then be used to process data and search for the data needed.',
@@ -155,7 +175,7 @@ export default {
           category: 'Database'
         },
         {
-          id: 15,
+          id: 17,
           name: 'Java',
           imageUrl: 'Java',
           status: 'This Java Project utilizes OOP principles, features a GUI built with JavaFX, and includes data validation for reliable inputs. It connects to a database using SQL Server and integrates with PhpMyAdmin via XAMPP for efficient data management.',
