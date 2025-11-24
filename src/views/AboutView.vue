@@ -270,11 +270,7 @@ export default {
 
       <section
         class="text-sm md:text-lg text-justify flex flex-col gap-4 md:flex-row-reverse md:gap-8 md:justify-left md:items-center">
-        <div class="flex justify-center z-50">
-          <img class="w-64 h-64 rounded-full mb-3 object-cover fadein-up border-2 border-[#0ef] Foto"
-            src="img/ABOUTFOTO.jpg" alt="Foto">
-        </div>
-        <div class="md:w-9/12">
+         <div class="md:w-9/12">
           <p class="mb-3 md:mb-7 fadein-left fadeins-1">
             &nbsp; &nbsp; &nbsp; Hello, my name is Oktavianus!👋 
           </p>
@@ -286,6 +282,10 @@ export default {
           </p>
         </div>
 
+        <div class="flex justify-center z-50">
+          <img class="w-64 h-64 rounded-full mb-3 object-cover fadein-up border-2 border-[#0ef] Foto"
+            src="img/ME.jpeg" alt="Foto">
+        </div>
       </section>
 
     </article>

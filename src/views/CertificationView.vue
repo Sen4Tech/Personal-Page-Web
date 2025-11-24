@@ -49,7 +49,7 @@
           <div class="h-[1px] mt-7 mb-7 w-20 bg-[#0ef] aos-init aos-animate mr-2"></div>
           <div class="md:block">
             <div class="text-white text-lg font-semibold">Categories</div>
-            <div class="mt-3 flex flex-wrap gap-1 relative z-50">
+            <div class="mt-3 flex flex-wrap gap-1 relative z-50 cursor-pointer">
               <span v-for="category in categories" 
                     :key="category"
                     :class="[
