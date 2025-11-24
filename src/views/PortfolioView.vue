@@ -3,7 +3,7 @@ export default {
   data() {
     return {
       activeTab: 1,
-      selectedCategory: null,
+      selectedCategory: 'All',
       categories: [
         'All',
         'Web & Application Development',
@@ -223,22 +223,22 @@ export default {
         </div>
       </header>
       
-  <!-- Category Selector -->
-  <div class="flex flex-wrap justify-center gap-2 mb-6 hidden sm:flex md:text-sm">
-  <button 
-    v-for="category in categories" 
-    :key="category"
-    @click="selectCategory(category)"
-    :class="[ 
-      'px-4 py-2 rounded-lg transition-all duration-300 z-50 border border-[#0ef] fadein-bot',
-      selectedCategory === category 
-        ? 'bg-[#0ef] text-black' 
-        : 'bg-[#282828] text-[#0ef] hover:bg-[#0ef] hover:text-black'
-    ]"
-  >
-    {{ category }}
-  </button>
-</div>
+      <!-- Category Selector -->
+    <div class="flex flex-wrap justify-center gap-2 mb-6 hidden sm:flex md:text-sm">
+      <button 
+        v-for="category in categories" 
+        :key="category"
+        @click="selectCategory(category)"
+        :class="[ 
+          'px-4 py-2 rounded-lg transition-all duration-300 z-50 border border-[#0ef] fadein-bot',
+          selectedCategory === category 
+            ? 'bg-[#0ef] text-black' 
+            : 'bg-[#282828] text-[#0ef] hover:bg-[#0ef] hover:text-black'
+        ]"
+      >
+        {{ category }}
+      </button>
+    </div>
 
 
 
