@@ -81,7 +81,7 @@ export default {
           status: 'In my project called KopiJanji, I created a project about a coffee website and also a place reservation to go to the place, where in the process of creating this website I used simple HTML, CSS, and JavaScript languages ​​to create a coffee website.',
           tech: 'HTML, CSS, JavaScript, Github, Git',
           github: 'https://github.com/Sen4Tech/kopi-janji',
-          demo: 'https://kopi-janji-cozy.vercel.app/',
+          demo: 'https://kopi-janji.vercel.app/',
           category: 'Web & Application Development'
         },
         {
