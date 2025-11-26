@@ -1,6 +1,4 @@
 <template>
-  <!-- component -->
-  <!-- This is an example component -->
   <div class="max-w-7xl mx-auto flex flex-col relative">
 
     <nav class="max-w-7xl px-5 md:fixed top-0 z-[100] w-screen backdrop-blur-md bg-[#1f242d] bg-opacity-80">
@@ -41,26 +39,39 @@
       </div>
     </nav>
 
+    <audio
+      id="global-audio"
+      class="hidden"
+      src="/audio/survival.mp3">
+    </audio>
+
     <div class="md:mt-[100px]">
       <router-view />
     </div>
   </div>
+
   <footer class="block md:hidden fixed bottom-0 left-0 right-0 rounded-t-3xl border border-[#383838] bg-[#1e1e1f] bg-opacity-80 backdrop-blur-md backdrop-opacity-90 z-[100]">
     <nav class="flex justify-around py-4 text-xs">
-  <router-link to="/" class="text-gray-300 hover:text-white hover-underline">Home</router-link>
-  <router-link to="/about" class="text-gray-300 hover:text-white hover-underline">About</router-link>
-  <router-link to="/project" class="text-gray-300 hover:text-white hover-underline">Project</router-link>
-  <router-link to="/certification" class="text-gray-300 hover:text-white hover-underline">Certification</router-link>
-  <router-link to="/experience" class="text-gray-300 hover:text-white hover-underline">Experience</router-link>
-</nav>
-
-</footer>
-
-
+      <router-link to="/" class="text-gray-300 hover:text-white hover-underline">Home</router-link>
+      <router-link to="/about" class="text-gray-300 hover:text-white hover-underline">About</router-link>
+      <router-link to="/project" class="text-gray-300 hover:text-white hover-underline">Project</router-link>
+      <router-link to="/certification" class="text-gray-300 hover:text-white hover-underline">Certification</router-link>
+      <router-link to="/experience" class="text-gray-300 hover:text-white hover-underline">Experience</router-link>
+    </nav>
+  </footer>
 </template>
 
 <script>
 export default {
+  created() {
+    this.$router.afterEach(() => {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'auto', 
+      });
+    });
+  },
   methods: {
     redirectToHome() {
       this.$router.push('/')
@@ -68,6 +79,7 @@ export default {
   },
 }
 </script>
+
 
 <style>
 *,

@@ -271,9 +271,44 @@ export default {
       return (this.currentTime / this.duration) * 100;
     }
   },
+  mounted() {
+    const audio = document.getElementById('global-audio');
+    if (!audio) return;
+
+    this._onTimeUpdateHandler = () => this.onTimeUpdate();
+    this._onLoadedMetadataHandler = () => this.onLoadedMetadata();
+    this._onEndedHandler = () => this.onEnded();
+
+    audio.addEventListener('timeupdate', this._onTimeUpdateHandler);
+    audio.addEventListener('loadedmetadata', this._onLoadedMetadataHandler);
+    audio.addEventListener('ended', this._onEndedHandler);
+
+    // sync state kalau audio sudah jalan
+    this.duration = audio.duration || 0;
+    this.currentTime = audio.currentTime || 0;
+    this.isPlaying = !audio.paused;
+  },
+  beforeUnmount() {
+    const audio = document.getElementById('global-audio');
+    if (!audio) return;
+
+    audio.removeEventListener('timeupdate', this._onTimeUpdateHandler);
+    audio.removeEventListener('loadedmetadata', this._onLoadedMetadataHandler);
+    audio.removeEventListener('ended', this._onEndedHandler);
+  },
   methods: {
+    getAudio() {
+      const audio = document.getElementById('global-audio');
+      if (!audio) return null;
+
+      // pastikan src benar (kalau nanti ganti lagu tinggal ubah currentSong)
+      if (!audio.src || !audio.src.includes(this.currentSong.audioUrl)) {
+        audio.src = this.currentSong.audioUrl;
+      }
+      return audio;
+    },
     togglePlay() {
-      const audio = this.$refs.audio;
+      const audio = this.getAudio();
       if (!audio) return;
 
       if (this.isPlaying) {
@@ -285,13 +320,13 @@ export default {
       }
     },
     onLoadedMetadata() {
-      const audio = this.$refs.audio;
-      if (audio && audio.duration) {
+      const audio = this.getAudio();
+      if (audio && !isNaN(audio.duration)) {
         this.duration = audio.duration;
       }
     },
     onTimeUpdate() {
-      const audio = this.$refs.audio;
+      const audio = this.getAudio();
       if (!audio) return;
       this.currentTime = audio.currentTime || 0;
       this.duration = audio.duration || 0;
@@ -367,14 +402,7 @@ export default {
           </div>
         </header>
 
-        <!-- AUDIO TAG (HIDDEN) -->
-        <audio
-          ref="audio"
-          :src="currentSong.audioUrl"
-          @loadedmetadata="onLoadedMetadata"
-          @timeupdate="onTimeUpdate"
-          @ended="onEnded"
-        ></audio>
+        <!-- ⚠️ Tidak ada <audio> di sini, pakai global-audio -->
 
         <div
           class="currently-card relative z-30 overflow-hidden rounded-3xl border border-[#0ef]/70 bg-gradient-to-r from-[#05060a] via-[#111827] to-[#020617] px-4 py-4 md:px-6 md:py-5 shadow-[0_0_30px_rgba(14,255,255,0.2)] hover:shadow-[0_0_40px_rgba(14,255,255,0.4)] transition-all duration-300">
@@ -437,7 +465,7 @@ export default {
 
               <!-- Bottom Row: Controls + Waveform -->
               <div class="flex items-center justify-between mt-2">
-                <!-- Play / Pause area (klik area lebar) -->
+                <!-- Play / Pause -->
                 <div
                   class="flex items-center gap-2 text-xs md:text-sm cursor-pointer relative z-40 pointer-events-auto"
                   @click.stop="togglePlay"
