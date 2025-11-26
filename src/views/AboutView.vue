@@ -252,7 +252,7 @@ export default {
         artist: 'Barragini',
         album: '-',
         coverUrl: '/img/foto-song.jpg',
-        audioUrl: '/audio/survival.mp3', 
+        audioUrl: '/audio/survival.mp3',
       },
       isPlaying: false,
       currentTime: 0,
@@ -325,8 +325,9 @@ export default {
           </div>
         </header>
 
+        <!-- Mobile: foto di atas, teks di bawah; Desktop: row (teks + foto) -->
         <section
-          class="text-sm md:text-lg text-justify flex flex-col gap-4 md:flex-row-reverse md:gap-8 md:justify-left md:items-center">
+          class="text-sm md:text-lg text-justify flex flex-col-reverse gap-4 md:flex-row md:gap-8 md:justify-left md:items-center">
           <div class="md:w-9/12">
             <p class="mb-3 md:mb-7 fadein-left fadeins-1">
               &nbsp; &nbsp; &nbsp; Hello, my name is Oktavianus!👋
@@ -347,7 +348,7 @@ export default {
             </p>
           </div>
 
-          <div class="flex justify-center z-50">
+          <div class="flex justify-center z-50 md:w-3/12">
             <img class="w-64 h-64 rounded-full mb-3 object-cover fadein-up border-2 border-[#0ef] Foto"
               src="img/ME.jpeg" alt="Foto">
           </div>
@@ -376,7 +377,7 @@ export default {
         ></audio>
 
         <div
-          class="currently-card relative overflow-hidden rounded-3xl border border-[#0ef]/70 bg-gradient-to-r from-[#05060a] via-[#111827] to-[#020617] px-4 py-4 md:px-6 md:py-5 shadow-[0_0_30px_rgba(14,255,255,0.2)] hover:shadow-[0_0_40px_rgba(14,255,255,0.4)] transition-all duration-300">
+          class="currently-card relative z-30 overflow-hidden rounded-3xl border border-[#0ef]/70 bg-gradient-to-r from-[#05060a] via-[#111827] to-[#020617] px-4 py-4 md:px-6 md:py-5 shadow-[0_0_30px_rgba(14,255,255,0.2)] hover:shadow-[0_0_40px_rgba(14,255,255,0.4)] transition-all duration-300">
           <div class="absolute inset-0 pointer-events-none opacity-40">
             <div class="absolute -right-10 -top-10 w-40 h-40 rounded-full bg-[#0ef] blur-3xl"></div>
             <div class="absolute -left-16 -bottom-16 w-48 h-48 rounded-full bg-fuchsia-500 blur-3xl"></div>
@@ -387,7 +388,7 @@ export default {
             <div
               class="relative shrink-0 rounded-2xl border border-white/10 overflow-hidden shadow-xl bg-black/40">
               <img :src="currentSong.coverUrl" alt="Album cover"
-     class="w-24 h-24 md:w-28 md:h-28 object-cover">
+                  class="w-24 h-24 md:w-28 md:h-28 object-cover">
 
               <div
                 class="absolute bottom-2 left-2 bg-black/70 text-[10px] px-2 py-0.5 rounded-full flex items-center gap-1">
@@ -435,15 +436,18 @@ export default {
               </div>
 
               <!-- Bottom Row: Controls + Waveform -->
-              <div class="flex items-center justify-between mt-2 z-10">
-                <!-- Play / Pause button -->
-                <div class="flex items-center gap-2 text-xs md:text-sm">
-                  <button
-                    @click="togglePlay"
-                    class="flex items-center justify-center w-8 h-8 rounded-full border border-white/20 bg-white/5 hover:bg-[#0ef]/20 hover:border-[#0ef] transition-all duration-200">
+              <div class="flex items-center justify-between mt-2">
+                <!-- Play / Pause area (klik area lebar) -->
+                <div
+                  class="flex items-center gap-2 text-xs md:text-sm cursor-pointer relative z-40 pointer-events-auto"
+                  @click.stop="togglePlay"
+                >
+                  <div
+                    class="flex items-center justify-center w-10 h-10 md:w-9 md:h-9 rounded-full border border-white/20 bg-white/5 hover:bg-[#0ef]/20 hover:border-[#0ef] transition-all duration-200"
+                  >
                     <span v-if="!isPlaying">▶</span>
                     <span v-else>⏸</span>
-                  </button>
+                  </div>
                   <div class="flex items-center gap-1 text-gray-300">
                     <span
                       class="w-1.5 h-1.5 rounded-full"
@@ -464,6 +468,7 @@ export default {
                   ></span>
                 </div>
               </div>
+
             </div>
           </div>
         </div>
