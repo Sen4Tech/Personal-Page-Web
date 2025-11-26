@@ -86,6 +86,7 @@
             <div class="flex justify-center">
               <button @click="closeModal" class="text-[#0ef] px-4 py-2 rounded-lg hover:bg-[#0ef]/40 text-base border border-[#52B3D0]">Close</button>
             </div>
+            
           </div>
         </div>
       </div>

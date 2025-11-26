@@ -198,7 +198,6 @@ export default {
           imageUrl: 'https://logospng.org/download/npm/npm-2048.png',
           status: 'Package Manager'
         },
-        
       ],
       soft: [
         {
@@ -246,139 +245,327 @@ export default {
           name: 'Creative',
           imageUrl: 'https://png.pngtree.com/png-clipart/20240708/original/pngtree-flat-design-of-soft-skills-concept-png-image_15516351.png',
         },
-      ]
+      ],
+      // 🎧 Currently Listening - Spotify style
+      currentSong: {
+        title: 'SURVIVAL',
+        artist: 'Barragini',
+        album: '-',
+        coverUrl: '/img/foto-song.jpg',
+        audioUrl: '/audio/survival.mp3', 
+      },
+      isPlaying: false,
+      currentTime: 0,
+      duration: 0,
     };
+  },
+  computed: {
+    formattedCurrentTime() {
+      return this.formatTime(this.currentTime);
+    },
+    formattedDuration() {
+      return this.formatTime(this.duration);
+    },
+    progressPercent() {
+      if (!this.duration || this.duration === 0) return 0;
+      return (this.currentTime / this.duration) * 100;
+    }
+  },
+  methods: {
+    togglePlay() {
+      const audio = this.$refs.audio;
+      if (!audio) return;
+
+      if (this.isPlaying) {
+        audio.pause();
+        this.isPlaying = false;
+      } else {
+        audio.play();
+        this.isPlaying = true;
+      }
+    },
+    onLoadedMetadata() {
+      const audio = this.$refs.audio;
+      if (audio && audio.duration) {
+        this.duration = audio.duration;
+      }
+    },
+    onTimeUpdate() {
+      const audio = this.$refs.audio;
+      if (!audio) return;
+      this.currentTime = audio.currentTime || 0;
+      this.duration = audio.duration || 0;
+    },
+    onEnded() {
+      this.isPlaying = false;
+      this.currentTime = 0;
+    },
+    formatTime(seconds) {
+      const s = Math.floor(seconds || 0);
+      const min = Math.floor(s / 60);
+      const sec = s % 60;
+      return `${min}:${sec.toString().padStart(2, '0')}`;
+    }
   }
-
-  
-}
-
-  
+};
 </script>
+
 <template>
-  <div
-    class="bg-[#1e1e1f] px-5 py-5 md:px-12 md:py-10 text-left border border-[#0ef] rounded-3xl text-amber-50 mx-3 mb-5">
-    <article data-page="about">
+  <div>
+    <!-- ABOUT ME -->
+    <div
+      class="bg-[#1e1e1f] px-5 py-5 md:px-12 md:py-10 text-left border border-[#0ef] rounded-3xl text-amber-50 mx-3 mb-5">
+      <article data-page="about">
 
-      <header>
-        <div class="text-2xl font-bold text-white mb-5 fadein-bot title-section flex items-center">
-          About Me &nbsp;
-          <div class="h-[1px] w-32 bg-[#0ef] md:w-96 aos-init aos-animate" data-aos="zoom-in-left"
-            data-aos-duration="600"></div>
-        </div>
-      </header>
+        <header>
+          <div class="text-2xl font-bold text-white mb-5 fadein-bot title-section flex items-center">
+            About Me &nbsp;
+            <div class="h-[1px] w-32 bg-[#0ef] md:w-96 aos-init aos-animate" data-aos="zoom-in-left"
+              data-aos-duration="600"></div>
+          </div>
+        </header>
 
-      <section
-        class="text-sm md:text-lg text-justify flex flex-col gap-4 md:flex-row-reverse md:gap-8 md:justify-left md:items-center">
-         <div class="md:w-9/12">
-          <p class="mb-3 md:mb-7 fadein-left fadeins-1">
-            &nbsp; &nbsp; &nbsp; Hello, my name is Oktavianus!👋 
-          </p>
-          <p class="mb-3 md:mb-7 fadein-left fadeins-1">
-            &nbsp; &nbsp; &nbsp; I am 20 years old and a 5th semester student studying at Bina Nusantara University majoring in Information Systems. Technology is my passion, with my main focus as a System Analyst and Front End Developer.
-          </p>
-          <p class="mb-3 fadein-left fadeins-2">
-            &nbsp; &nbsp; &nbsp; I have strong expertise in System Analysis and front-end development, while my ability in Cloud Computing has reached an intermediate level. I have the passion to continue learning and developing technological skills, and creating innovative solutions through my information technology expertise. My academic journey at Binus University is not just about getting a degree, but about preparing myself to become a competent and creative technology professional in the future.
-          </p>
-        </div>
+        <section
+          class="text-sm md:text-lg text-justify flex flex-col gap-4 md:flex-row-reverse md:gap-8 md:justify-left md:items-center">
+          <div class="md:w-9/12">
+            <p class="mb-3 md:mb-7 fadein-left fadeins-1">
+              &nbsp; &nbsp; &nbsp; Hello, my name is Oktavianus!👋
+            </p>
+            <p class="mb-3 md:mb-7 fadein-left fadeins-1">
+              &nbsp; &nbsp; &nbsp; I'm 21 years old and currently studying in my final semester at Bina Nusantara
+              University, majoring in Information Systems. I'm currently focused on being a Full Stack Developer and have a
+              strong interest in technology.
+            </p>
+            <p class="mb-3 fadein-left fadeins-2">
+              &nbsp; &nbsp; &nbsp; I possess strong expertise in full-stack development and intermediate skills in cloud
+              computing. My experience stems not only from my studies at Binus University, but also from independent
+              exploration outside of campus and various self-projects I've built to hone my skills in real-world settings.
+              I have a passion for continuous learning, developing my technological skills, and creating innovative
+              solutions through my expertise in information technology. My academic journey is not just about earning a
+              degree, but also about preparing myself to become a competent, creative technology professional, ready to
+              face future industry challenges.
+            </p>
+          </div>
 
-        <div class="flex justify-center z-50">
-          <img class="w-64 h-64 rounded-full mb-3 object-cover fadein-up border-2 border-[#0ef] Foto"
-            src="img/ME.jpeg" alt="Foto">
-        </div>
-      </section>
+          <div class="flex justify-center z-50">
+            <img class="w-64 h-64 rounded-full mb-3 object-cover fadein-up border-2 border-[#0ef] Foto"
+              src="img/ME.jpeg" alt="Foto">
+          </div>
+        </section>
 
-    </article>
-  </div>
+      </article>
+    </div>
 
-  <div class="px-5 py-5 md:px-12 md:py-10 text-left text-amber-50 mx-3">
-    <article data-page="about">
-      <header>
-        <div class="text-2xl font-bold text-white mb-5 fadein-bot title-section flex items-center">
-          <div class="h-[1px] w-10 bg-[#0ef] md:w-20 aos-init aos-animate" data-aos="zoom-in-left"
-            data-aos-duration="600"></div>
-          &nbsp; Skills
-        </div>
-      </header>
-      <section>
-        <div>
-          <ul class="flex flex-wrap text-sm font-medium text-center text-gray-500 dark:text-gray-400 mb-5">
-            <li class="mr-2 z-[100]">
-              <button class="inline-block px-4 py-3 rounded-lg hover:text-[#0ef]"
-                :class="{ 'text-[#0ef] bg-[#0ef] bg-opacity-10': activeTab === 1 }" @click="activeTab = 1">Tech Stack</button>
-            </li>
-            <li class="mr-2 z-[100]">
-              <button class="inline-block px-4 py-3 rounded-lg hover:text-[#0ef]"
-                :class="{ 'text-[#0ef] bg-[#0ef] bg-opacity-10': activeTab === 2 }" @click="activeTab = 2">Tools</button>
-            </li>
-            <li class="mr-2 z-[100]">
-              <button class="inline-block px-4 py-3 rounded-lg hover:text-[#0ef]"
-                :class="{ 'text-[#0ef] bg-[#0ef] bg-opacity-10': activeTab === 3 }" @click="activeTab = 3">Soft Skills</button>
-            </li>
-          </ul>
-        </div>
-        <div v-show="activeTab === 1">
-          <div class="grid grid-cols-2 gap-4 pb-32 md:grid-cols-3 md:gap-8 xl:grid-cols-4 xl:gap-10 2xl:gap-12">
-            <div v-for="item in tech" :key="item.id">
+    <!-- 🎧 CURRENTLY LISTENING - SPOTIFY STYLE -->
+    <div class="px-5 py-5 md:px-12 md:py-6 text-left text-amber-50 mx-3 mb-5">
+      <article>
+        <header>
+          <div class="text-2xl font-bold text-white mb-4 flex items-center">
+            <div class="h-[1px] w-10 bg-[#0ef] md:w-20"></div>
+            &nbsp; Currently Listening
+          </div>
+        </header>
+
+        <!-- AUDIO TAG (HIDDEN) -->
+        <audio
+          ref="audio"
+          :src="currentSong.audioUrl"
+          @loadedmetadata="onLoadedMetadata"
+          @timeupdate="onTimeUpdate"
+          @ended="onEnded"
+        ></audio>
+
+        <div
+          class="currently-card relative overflow-hidden rounded-3xl border border-[#0ef]/70 bg-gradient-to-r from-[#05060a] via-[#111827] to-[#020617] px-4 py-4 md:px-6 md:py-5 shadow-[0_0_30px_rgba(14,255,255,0.2)] hover:shadow-[0_0_40px_rgba(14,255,255,0.4)] transition-all duration-300">
+          <div class="absolute inset-0 pointer-events-none opacity-40">
+            <div class="absolute -right-10 -top-10 w-40 h-40 rounded-full bg-[#0ef] blur-3xl"></div>
+            <div class="absolute -left-16 -bottom-16 w-48 h-48 rounded-full bg-fuchsia-500 blur-3xl"></div>
+          </div>
+
+          <div class="relative flex items-center gap-4 md:gap-6">
+            <!-- Cover -->
+            <div
+              class="relative shrink-0 rounded-2xl border border-white/10 overflow-hidden shadow-xl bg-black/40">
+              <img :src="currentSong.coverUrl" alt="Album cover"
+     class="w-24 h-24 md:w-28 md:h-28 object-cover">
+
               <div
-                class="item-tech flex cursor-pointer items-center gap-2 rounded border border-[#0ef] px-2 py-2 hover:bg-[#0ef] hover:bg-opacity-10 md:gap-3 lg:px-3 bg-[#1e1e1f]">
-                <div class="flex h-12 w-12 items-center justify-center p-0 lg:h-16 lg:w-16 lg:p-2 zoom-in">
-                  <img alt="HTML" loading="lazy" width="32" height="32" decoding="async" data-nimg="1"
-                    class="img-tech drop-shadow-xl transition-all duration-300 h-[65%] w-[65%] lg:h-[85%] lg:w-[85%]"
-                    :src="item.imageUrl" style="color: transparent;">
+                class="absolute bottom-2 left-2 bg-black/70 text-[10px] px-2 py-0.5 rounded-full flex items-center gap-1">
+                <span
+                  class="inline-block w-1.5 h-1.5 rounded-full"
+                  :class="isPlaying ? 'bg-emerald-400 animate-pulse' : 'bg-gray-400'">
+                </span>
+                <span class="uppercase tracking-wide text-[9px]">
+                  {{ isPlaying ? 'Now Playing' : 'Paused' }}
+                </span>
+              </div>
+            </div>
+
+            <!-- Info + Controls -->
+            <div class="flex flex-col gap-2 w-full">
+              <div>
+                <div class="text-xs uppercase tracking-[0.25em] text-[#0ef]/80 mb-1">
+                  Favorite Track Right Now
                 </div>
-                <div class="flex items-center text-sm md:text-base lg:text-lg">
-                  <div class="tech font-medium text-secondary transition-all duration-300 translate-y-0 ">{{ item.name }}
-                  </div>
+                <div class="flex flex-wrap items-center gap-2">
+                  <h3 class="text-base md:text-lg font-semibold text-white">
+                    {{ currentSong.title }}
+                  </h3>
+                  <span class="text-xs md:text-sm text-gray-300">
+                    • {{ currentSong.artist }}
+                  </span>
+                </div>
+                <div class="text-xs text-gray-400">
+                  Album: {{ currentSong.album }}
+                </div>
+              </div>
+
+              <!-- Progress -->
+              <div class="mt-1">
+                <div class="flex justify-between text-[10px] text-gray-300 mb-1">
+                  <span>{{ formattedCurrentTime }}</span>
+                  <span>{{ formattedDuration }}</span>
+                </div>
+                <div class="w-full h-1.5 rounded-full bg-white/10 overflow-hidden">
                   <div
-                    class="status-tech opacity-0 absolute mt-5 text-[10px] text-[#0ef] transition-all duration-300 md:text-xs lg:text-sm">
-                    {{ item.status }}</div>
+                    class="h-full rounded-full bg-gradient-to-r from-[#0ef] via-cyan-300 to-emerald-300"
+                    :style="{ width: progressPercent + '%' }"
+                  ></div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-        <div v-show="activeTab === 2">
-          <div class="grid grid-cols-2 gap-4 pb-32 md:grid-cols-3 md:gap-8 xl:grid-cols-4 xl:gap-10 2xl:gap-12">
-            <div v-for="item in tools" :key="item.id">
-              <div
-                class="item-tech flex cursor-pointer items-center gap-2 rounded border border-[#0ef] px-2 py-2 hover:bg-[#0ef] hover:bg-opacity-10 md:gap-3 lg:px-3 bg-[#1e1e1f]">
-                <div class="flex h-12 w-12 items-center justify-center p-0 lg:h-16 lg:w-16 lg:p-2 zoom-in">
-                  <img alt="HTML" loading="lazy" width="32" height="32" decoding="async" data-nimg="1"
-                    class="img-tech drop-shadow-xl transition-all duration-300 h-[65%] w-[65%] lg:h-[85%] lg:w-[85%]  "
-                    :src="item.imageUrl" style="color: transparent;">
-                </div>
-                <div class="flex items-center text-sm md:text-base lg:text-lg">
-                  <div class="tech font-medium text-secondary transition-all duration-300 translate-y-0 ">{{ item.name }}
-                  </div>
-                  <div
-                    class="status-tech opacity-0 absolute mt-5 text-[10px] text-[#0ef] transition-all duration-300 md:text-xs lg:text-sm">
-                    {{ item.status }}</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div v-show="activeTab === 3">
-          <div class="grid grid-cols-2 gap-4 pb-32 md:grid-cols-3 md:gap-8 xl:grid-cols-4 xl:gap-10 2xl:gap-12">
-            <div v-for="item in soft" :key="item.id">
-              <div
-                class="item-tech flex cursor-pointer items-center gap-2 rounded border border-[#0ef] px-2 py-2 hover:bg-[#0ef] hover:bg-opacity-10 md:gap-3 lg:px-3 bg-[#1e1e1f]">
-                <div class="flex h-12 w-12 items-center justify-center p-0 lg:h-16 lg:w-16 lg:p-2 zoom-in">
-                  <img alt="HTML" loading="lazy" width="32" height="32" decoding="async" data-nimg="1"
-                    class="img-tech drop-shadow-xl transition-all duration-300 h-[65%] w-[65%] lg:h-[85%] lg:w-[85%]  "
-                    :src="item.imageUrl" style="color: transparent;">
-                </div>
-                <div class="flex items-center text-sm md:text-base lg:text-lg">
-                  <div class="techSoft font-medium text-secondary transition-all duration-300 translate-y-0 ">{{ item.name }}
+
+              <!-- Bottom Row: Controls + Waveform -->
+              <div class="flex items-center justify-between mt-2 z-10">
+                <!-- Play / Pause button -->
+                <div class="flex items-center gap-2 text-xs md:text-sm">
+                  <button
+                    @click="togglePlay"
+                    class="flex items-center justify-center w-8 h-8 rounded-full border border-white/20 bg-white/5 hover:bg-[#0ef]/20 hover:border-[#0ef] transition-all duration-200">
+                    <span v-if="!isPlaying">▶</span>
+                    <span v-else>⏸</span>
+                  </button>
+                  <div class="flex items-center gap-1 text-gray-300">
+                    <span
+                      class="w-1.5 h-1.5 rounded-full"
+                      :class="isPlaying ? 'bg-emerald-400' : 'bg-gray-400'">
+                    </span>
+                    <span class="text-[11px] uppercase tracking-wide">
+                      {{ isPlaying ? 'Playing on headphones' : 'Ready to play' }}
+                    </span>
                   </div>
                 </div>
+
+                <!-- Waveform -->
+                <div class="hidden md:flex items-end gap-[3px] h-6">
+                  <span
+                    v-for="n in 18"
+                    :key="n"
+                    :class="['wave', { 'wave-paused': !isPlaying }]"
+                  ></span>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
-    </article>
+      </article>
+    </div>
+
+    <!-- SKILLS -->
+    <div class="px-5 py-5 md:px-12 md:py-10 text-left text-amber-50 mx-3">
+      <article data-page="about">
+        <header>
+          <div class="text-2xl font-bold text-white mb-5 fadein-bot title-section flex items-center">
+            <div class="h-[1px] w-10 bg-[#0ef] md:w-20 aos-init aos-animate" data-aos="zoom-in-left"
+              data-aos-duration="600"></div>
+            &nbsp; Skills
+          </div>
+        </header>
+        <section>
+          <div>
+            <ul class="flex flex-wrap text-sm font-medium text-center text-gray-500 dark:text-gray-400 mb-5">
+              <li class="mr-2 z-[100]">
+                <button class="inline-block px-4 py-3 rounded-lg hover:text-[#0ef]"
+                  :class="{ 'text-[#0ef] bg-[#0ef] bg-opacity-10': activeTab === 1 }"
+                  @click="activeTab = 1">Tech Stack</button>
+              </li>
+              <li class="mr-2 z-[100]">
+                <button class="inline-block px-4 py-3 rounded-lg hover:text-[#0ef]"
+                  :class="{ 'text-[#0ef] bg-[#0ef] bg-opacity-10': activeTab === 2 }"
+                  @click="activeTab = 2">Tools</button>
+              </li>
+              <li class="mr-2 z-[100]">
+                <button class="inline-block px-4 py-3 rounded-lg hover:text-[#0ef]"
+                  :class="{ 'text-[#0ef] bg-[#0ef] bg-opacity-10': activeTab === 3 }"
+                  @click="activeTab = 3">Soft Skills</button>
+              </li>
+            </ul>
+          </div>
+          <div v-show="activeTab === 1">
+            <div class="grid grid-cols-2 gap-4 pb-32 md:grid-cols-3 md:gap-8 xl:grid-cols-4 xl:gap-10 2xl:gap-12">
+              <div v-for="item in tech" :key="item.id">
+                <div
+                  class="item-tech flex cursor-pointer items-center gap-2 rounded border border-[#0ef] px-2 py-2 hover:bg-[#0ef] hover:bg-opacity-10 md:gap-3 lg:px-3 bg-[#1e1e1f]">
+                  <div class="flex h-12 w-12 items-center justify-center p-0 lg:h-16 lg:w-16 lg:p-2 zoom-in">
+                    <img alt="HTML" loading="lazy" width="32" height="32" decoding="async" data-nimg="1"
+                      class="img-tech drop-shadow-xl transition-all duration-300 h-[65%] w-[65%] lg:h-[85%] lg:w-[85%]"
+                      :src="item.imageUrl" style="color: transparent;">
+                  </div>
+                  <div class="flex items-center text-sm md:text-base lg:text-lg">
+                    <div class="tech font-medium text-secondary transition-all duration-300 translate-y-0 ">
+                      {{ item.name }}
+                    </div>
+                    <div
+                      class="status-tech opacity-0 absolute mt-5 text-[10px] text-[#0ef] transition-all duration-300 md:text-xs lg:text-sm">
+                      {{ item.status }}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div v-show="activeTab === 2">
+            <div class="grid grid-cols-2 gap-4 pb-32 md:grid-cols-3 md:gap-8 xl:grid-cols-4 xl:gap-10 2xl:gap-12">
+              <div v-for="item in tools" :key="item.id">
+                <div
+                  class="item-tech flex cursor-pointer items-center gap-2 rounded border border-[#0ef] px-2 py-2 hover:bg-[#0ef] hover:bg-opacity-10 md:gap-3 lg:px-3 bg-[#1e1e1f]">
+                  <div class="flex h-12 w-12 items-center justify-center p-0 lg:h-16 lg:w-16 lg:p-2 zoom-in">
+                    <img alt="HTML" loading="lazy" width="32" height="32" decoding="async" data-nimg="1"
+                      class="img-tech drop-shadow-xl transition-all duration-300 h-[65%] w-[65%] lg:h-[85%] lg:w-[85%]  "
+                      :src="item.imageUrl" style="color: transparent;">
+                  </div>
+                  <div class="flex items-center text-sm md:text-base lg:text-lg">
+                    <div class="tech font-medium text-secondary transition-all duration-300 translate-y-0 ">
+                      {{ item.name }}
+                    </div>
+                    <div
+                      class="status-tech opacity-0 absolute mt-5 text-[10px] text-[#0ef] transition-all duration-300 md:text-xs lg:text-sm">
+                      {{ item.status }}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div v-show="activeTab === 3">
+            <div class="grid grid-cols-2 gap-4 pb-32 md:grid-cols-3 md:gap-8 xl:grid-cols-4 xl:gap-10 2xl:gap-12">
+              <div v-for="item in soft" :key="item.id">
+                <div
+                  class="item-tech flex cursor-pointer items-center gap-2 rounded border border-[#0ef] px-2 py-2 hover:bg-[#0ef] hover:bg-opacity-10 md:gap-3 lg:px-3 bg-[#1e1e1f]">
+                  <div class="flex h-12 w-12 items-center justify-center p-0 lg:h-16 lg:w-16 lg:p-2 zoom-in">
+                    <img alt="HTML" loading="lazy" width="32" height="32" decoding="async" data-nimg="1"
+                      class="img-tech drop-shadow-xl transition-all duration-300 h-[65%] w-[65%] lg:h-[85%] lg:w-[85%]  "
+                      :src="item.imageUrl" style="color: transparent;">
+                  </div>
+                  <div class="flex items-center text-sm md:text-base lg:text-lg">
+                    <div class="techSoft font-medium text-secondary transition-all duration-300 translate-y-0 ">
+                      {{ item.name }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </article>
+    </div>
   </div>
 </template>
 
@@ -388,7 +575,7 @@ export default {
   animation: fadeInLeft 0.5s ease-out forwards;
 }
 
-@keyframes fadeInRight {
+@keyframes fadeInLeft {
   0% {
     opacity: 0;
     transform: translateX(-100%);
@@ -428,5 +615,50 @@ export default {
 .item-tech {
   position: relative;
   z-index: 10;
+}
+
+/* 🎧 Spotify-like waveform */
+.wave {
+  width: 3px;
+  border-radius: 999px;
+  background: #0ef;
+  animation: waveAnim 1s ease-in-out infinite;
+}
+
+.wave:nth-child(odd) {
+  animation-delay: 0.15s;
+}
+
+.wave:nth-child(3n) {
+  animation-delay: 0.3s;
+}
+
+.wave:nth-child(4n) {
+  animation-delay: 0.45s;
+}
+
+@keyframes waveAnim {
+  0% {
+    height: 4px;
+    opacity: 0.6;
+  }
+  50% {
+    height: 20px;
+    opacity: 1;
+  }
+  100% {
+    height: 6px;
+    opacity: 0.7;
+  }
+}
+
+/* Pause animasi wave kalau lagu pause */
+.wave-paused {
+  animation-play-state: paused;
+  opacity: 0.4;
+}
+
+.currently-card:hover {
+  transform: translateY(-2px);
 }
 </style>
