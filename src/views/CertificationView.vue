@@ -1,99 +1,213 @@
 <template>
-  <div class="container mx-auto p-3 md:p-8">
-    <div class="flex flex-col-reverse md:flex-row relative">
-      <div class="w-full md:w-2/3">
-        <div class="flex flex-col gap-4 md:px-20 fade-zoom-up">
-          <article 
-            v-for="certificate in filteredCertificates" 
-            :key="certificate.id" 
+  <div class="relative z-20 max-w-6xl mx-auto px-3 md:px-6 py-6 md:py-10">
+    <div class="flex flex-col-reverse md:flex-row gap-8 md:gap-10">
+
+      <!-- LEFT: LIST CERTIFICATION -->
+      <main class="w-full md:w-2/3">
+        <div class="space-y-4 md:space-y-5 fade-zoom-up">
+          <article
+            v-for="certificate in filteredCertificates"
+            :key="certificate.id"
             @click="openModal(certificate)"
-            class="certificate-item">
-            <div class="flex w-full bg-[#1e1e1f] rounded-xl text-left text-white p-5 md:py-7 md:px-8 hover:bg-[#282828] items-center cursor-pointer border border-[#0ef] relative z-10">
-              <div class="w-full pr-4">
-                <div class="text-xs mb-1 text-slate-400 flex items-center italic">
-                  <div class="h-[1px] w-20 bg-[#0ef] md:w-5 aos-init aos-animate mr-2"></div> 
-                  {{ certificate.issueDate }}
+            class="group cursor-pointer"
+          >
+            <div
+              class="relative flex w-full items-center gap-4 md:gap-6
+                     bg-[#111216] rounded-2xl text-left text-white
+                     p-4 md:p-5 border border-[#0ef]/40
+                     hover:border-[#0ef] hover:bg-[#171821]
+                     hover:shadow-[0_0_28px_rgba(14,255,255,0.25)]
+                     transition-all duration-300"
+            >
+              <!-- Badge -->
+              <div
+                class="w-16 h-16 md:w-20 md:h-20 flex-shrink-0
+                       rounded-xl overflow-hidden bg-[#050509]
+                       border border-[#0ef]/40 flex items-center justify-center"
+              >
+                <img
+                  :src="certificate.badgeImage"
+                  :alt="certificate.name"
+                  class="w-full h-full object-contain"
+                />
+              </div>
+
+              <!-- Content -->
+              <div class="flex-1">
+                <div class="flex flex-wrap items-center gap-2 mb-1">
+                  <h2 class="text-sm md:text-base font-semibold text-[#0ef]">
+                    {{ certificate.name }}
+                  </h2>
+                  <span
+                    class="text-[10px] uppercase tracking-wide px-2 py-0.5 rounded-full
+                           bg-[#0ef]/10 text-[#0ef] border border-[#0ef]/40"
+                  >
+                    {{ certificate.category }}
+                  </span>
                 </div>
-                <h1 class="text-sm md:text-md text-[#0ef] font-bold mb-2 paraf">{{ certificate.name }}</h1>
-                <div class="text-sm hidden md:block paraf">
-                  <p class="mb-1">Issuer: {{ certificate.issuer }}</p>
-                  <p>{{ certificate.description }}</p>
-                </div>
-                <div class="mt-2">
-                  <a 
-                    :href="certificate.credentialUrl" 
-                    target="_blank" 
-                    class="text-xs text-[#0ef] hover:underline credential-link"
+
+                <p class="text-[11px] text-slate-400 mb-1">
+                  {{ certificate.issuer }} · {{ certificate.issueDate }}
+                </p>
+
+                <p class="text-xs md:text-sm text-slate-200 paraf">
+                  {{ certificate.description }}
+                </p>
+
+                <div class="mt-3 flex items-center justify-between">
+                  <button
+                    class="flex items-center gap-1 text-[11px] md:text-xs text-slate-400 group-hover:text-[#0ef]"
+                  >
+                    <span>View details</span>
+                    <span class="group-hover:translate-x-0.5 transition-transform">↗</span>
+                  </button>
+
+                  <a
                     v-if="certificate.credentialUrl"
+                    :href="certificate.credentialUrl"
+                    target="_blank"
                     @click.stop
+                    class="text-[11px] md:text-xs text-[#0ef] hover:underline"
                   >
                     View Credential
                   </a>
                 </div>
               </div>
-              <div>
-                <div class="w-20 h-20 md:w-28 flex items-center md:h-28">
-                  <img :src="certificate.badgeImage" class="rounded-lg md:rounded-xl" :alt="certificate.name">
-                </div>
-              </div>
             </div>
           </article>
         </div>
-  </div>
-      <div class="w-full md:w-1/3 h-fit p-8 md:sticky md:top-24 relative z-50">
-        <!-- Sidebar -->
-        <div class="flex flex-col text-left">
-          <div class="bg-clip-text bg-gradient-to-r from-slate-100 to-cyan-500 text-transparent">
-            My Certifications & Achievements
+      </main>
+
+      <!-- RIGHT: SIDEBAR -->
+      <aside class="w-full md:w-1/3 h-fit md:sticky md:top-24">
+        <div
+          class="bg-[#111216] border border-[#0ef]/40 rounded-2xl
+                 px-5 py-6 md:px-6 md:py-7
+                 shadow-[0_0_30px_rgba(14,255,255,0.18)]"
+        >
+          <p class="text-xs uppercase tracking-[0.3em] text-[#0ef]/80 mb-2">
+            Certificates
+          </p>
+          <h1 class="text-[1.4rem] md:text-2xl font-semibold text-white leading-snug mb-2">
+            My Certifications
+          </h1>
+          <p class="text-sm text-slate-300 mb-5">
+            A collection of
+            <span class="text-[#0ef] font-medium">cloud</span>,
+            <span class="text-[#0ef] font-medium">web development</span>, and
+            <span class="text-[#0ef] font-medium">UI/UX</span> achievements that show
+            my continuous learning journey.
+          </p>
+
+          <!-- Stats -->
+          <div class="grid grid-cols-2 gap-3 mb-6">
+            <div class="bg-[#18181b] border border-white/5 rounded-xl px-3 py-3">
+              <p class="text-[11px] uppercase tracking-wide text-slate-400 mb-1">
+                Total
+              </p>
+              <p class="text-lg font-semibold text-white">
+                {{ certificates.length }}
+                <span class="text-xs text-slate-400 font-normal">Certs</span>
+              </p>
+            </div>
+            <div class="bg-[#18181b] border border-white/5 rounded-xl px-3 py-3">
+              <p class="text-[11px] uppercase tracking-wide text-slate-400 mb-1">
+                Showing
+              </p>
+              <p class="text-lg font-semibold text-[#0ef]">
+                {{ filteredCertificates.length }}
+                <span class="text-xs text-slate-400 font-normal">Filtered</span>
+              </p>
+            </div>
           </div>
-          <div class="h-[1px] mt-7 mb-7 w-20 bg-[#0ef] aos-init aos-animate mr-2"></div>
-          <div class="md:block">
-            <div class="text-white text-lg font-semibold">Categories</div>
-            <div class="mt-3 flex flex-wrap gap-1 relative z-50 cursor-pointer">
-              <span v-for="category in categories" 
-                    :key="category"
-                    :class="[
-                         'px-4 py-1 rounded-lg transition-all duration-300 z-50 border border-[#0ef] fadein-bot text-sm',
-                      selectedCategory === category 
-                          ? 'bg-[#0ef] text-black' 
-                          : 'bg-[#282828] text-[#0ef] hover:bg-[#0ef] hover:text-black'
-                    ]"
-                    @click="selectedCategory = category">
+
+          <!-- Filter Categories -->
+          <div>
+            <div class="text-white text-sm md:text-base font-semibold mb-2">
+              Categories
+            </div>
+            <div class="flex flex-wrap gap-2 relative z-50">
+              <span
+                v-for="category in categories"
+                :key="category"
+                @click="selectedCategory = category"
+                :class="[
+                  'px-3 py-1.5 rounded-full text-xs md:text-sm cursor-pointer border transition-all duration-200',
+                  selectedCategory === category
+                    ? 'bg-[#0ef] text-black border-[#0ef]'
+                    : 'bg-[#18181b] text-[#0ef] border-[#0ef]/60 hover:bg-[#0ef] hover:text-black'
+                ]"
+              >
                 {{ category }}
               </span>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- MODAL -->
+    <div
+      v-if="showModal"
+      class="fixed inset-0 bg-black/60 flex items-center justify-center z-[1000] p-4"
+    >
+      <div
+        class="bg-[#050509] border border-[#0ef]/80 rounded-2xl
+               w-full mx-4 max-w-3xl max-h-[90vh] overflow-y-auto
+               p-5 md:p-6 shadow-[0_0_40px_rgba(14,255,255,0.35)]"
+      >
+        <div class="flex flex-col md:flex-row gap-5">
+          <!-- Badge besar -->
+          <div class="w-full md:w-1/3 flex justify-center md:justify-start">
+            <div
+              class="w-32 h-32 md:w-40 md:h-40 rounded-2xl border border-[#0ef]/50
+                     bg-[#050509] flex items-center justify-center"
+            >
+              <img
+                :src="selectedCertificate.badgeImage"
+                :alt="selectedCertificate.name"
+                class="w-full h-full object-contain"
+              />
+            </div>
+          </div>
+
+          <!-- Detail -->
+          <div class="w-full md:w-2/3">
+            <h2 class="text-lg md:text-2xl font-bold text-[#0ef] mb-2">
+              {{ selectedCertificate.name }}
+            </h2>
+            <p class="text-slate-300 text-xs md:text-sm mb-1">
+              {{ selectedCertificate.issuer }} · {{ selectedCertificate.issueDate }}
+            </p>
+            <p class="text-sm md:text-base text-slate-100 text-justify mb-4">
+              {{ selectedCertificate.description }}
+            </p>
+
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-3 mt-2">
+              <a
+                v-if="selectedCertificate.credentialUrl"
+                :href="selectedCertificate.credentialUrl"
+                target="_blank"
+                class="text-[#0ef] hover:underline text-sm md:text-base"
+              >
+                View Credential
+              </a>
+              <button
+                @click="closeModal"
+                class="text-[#0ef] px-4 py-2 rounded-lg hover:bg-[#0ef]/20
+                       text-sm md:text-base border border-[#0ef]/70 ml-auto"
+              >
+                Close
+              </button>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Modal -->
-  <div v-if="showModal" class="fixed inset-0 bg-[#1e1e1f] bg-opacity-50 flex items-center justify-center z-50 p-4 z-[1000]">
-    <div class="bg-[#1e1e1f] p-6 rounded-xl max-w-3xl w-full mx-4 max-h-[90vh] overflow-y-auto border border-[#0ef]">
-      <h2 class="text-xl md:text-2xl font-bold text-[#0ef] mb-4">{{ selectedCertificate.name }}</h2>
-      <div class="flex flex-col md:flex-row md:space-x-6">
-        <div class="w-full md:w-1/3 flex justify-center md:justify-start mb-4 md:mb-0">
-          <img :src="selectedCertificate.badgeImage" :alt="selectedCertificate.name" class="w-48 h-48 md:w-full md:h-auto object-contain ">
-        </div>
-        <div class="w-full md:w-2/3 text-center md:text-left md:mt-5">
-          <p class="text-white text-lg md:text-xl mb-2"><strong>Issuer:</strong> {{ selectedCertificate.issuer }}</p>
-          <p class="text-white text-lg md:text-xl mb-2"><strong>Issue Date:</strong> {{ selectedCertificate.issueDate }}</p>
-          <p class="text-white text-ml text-justify ">{{ selectedCertificate.description }}</p>
-        </div>
-      </div>
-      <div class="flex flex-col md:flex-row justify-between items-center mt-6">
-        <a v-if="selectedCertificate.credentialUrl" 
-           :href="selectedCertificate.credentialUrl" 
-           target="_blank" 
-           class="text-[#0ef] hover:underline text-base mb-4 md:mb-0">
-          View Credential
-        </a>
-        <button @click="closeModal" class="text-[#0ef] px-4 py-2 rounded-lg hover:bg-[#0ef]/40 text-base ml-auto border border-[#52B3D0]">Close</button>
-      </div>
-    </div>
-    </div>
   </div>
 </template>
+
  
     
 
@@ -215,24 +329,25 @@ export default {
   text-overflow: ellipsis;
   overflow: hidden;
 }
-@media (min-width: 768px) { 
+
+@media (min-width: 768px) {
   .paraf {
     display: -webkit-box;
   }
 }
+
 @keyframes fadeZoomUp {
   0% {
     opacity: 0;
-    transform: scale(0.5);
+    transform: translateY(8px) scale(0.97);
   }
   100% {
     opacity: 1;
-    transform: scale(1);
+    transform: translateY(0) scale(1);
   }
 }
+
 .fade-zoom-up {
-  animation: fadeZoomUp 1s ease-in-out;
+  animation: fadeZoomUp 0.6s ease-out;
 }
-
-
 </style>

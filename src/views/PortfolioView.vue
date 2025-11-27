@@ -196,118 +196,250 @@ export default {
     }
   },
   methods: {
-  selectCategory(category) {
-    this.selectedCategory = category;
-  },
-  redirectToLink(item) {
-    const targetLink = item.demo !== 'null' ? item.demo : item.github !== 'null' ? item.github : null;
-    if (targetLink) {
-      window.open(targetLink, '_blank');
-    } else {
-      alert('No link available for this project.');
+    selectCategory(category) {
+      this.selectedCategory = category;
+    },
+    redirectToLink(item) {
+      const targetLink =
+        item.demo !== 'null'
+          ? item.demo
+          : item.github !== 'null'
+          ? item.github
+          : null;
+      if (targetLink) {
+        window.open(targetLink, '_blank');
+      } else {
+        alert('No link available for this project.');
+      }
     }
   }
-}
-}
+};
 </script>
 
 <template>
-  <div class="px-5 py-5 md:px-12 md:py-10 text-left text-amber-50 mx-3">
-    <article data-page="about">
-      <header>
-        <div class="text-2xl font-bold text-white mb-10 fadein-bot title-section flex items-center justify-center flex-col">
-          <h4>My Project Experience</h4>
-          <h4 class="text-base font-normal text-transparent bg-clip-text bg-gradient-to-r from-slate-100 to-cyan-400">
-            Explore My Project so far
-          </h4>
-        </div>
+  <div class="relative z-20 max-w-6xl mx-auto px-3 md:px-6 py-6 md:py-10">
+    <article>
+      <!-- TITLE -->
+      <header class="text-center mb-8 md:mb-10">
+        <p class="text-xs uppercase tracking-[0.3em] text-[#0ef]/80 mb-2">
+          Projects
+        </p>
+        <h2 class="text-2xl md:text-3xl font-bold text-white mb-1">
+          My Project Experience
+        </h2>
+        <p
+          class="text-sm md:text-base text-transparent bg-clip-text bg-gradient-to-r from-slate-100 to-cyan-400"
+        >
+          A collection of products, experiments, and real-world solutions I’ve
+          built.
+        </p>
       </header>
-      
-      <!-- Category Selector -->
-    <div class="flex flex-wrap justify-center gap-2 mb-6 hidden sm:flex md:text-sm">
-      <button 
-        v-for="category in categories" 
-        :key="category"
-        @click="selectCategory(category)"
-        :class="[ 
-          'px-4 py-2 rounded-lg transition-all duration-300 z-50 border border-[#0ef] fadein-bot',
-          selectedCategory === category 
-            ? 'bg-[#0ef] text-black' 
-            : 'bg-[#282828] text-[#0ef] hover:bg-[#0ef] hover:text-black'
-        ]"
+
+      <!-- CATEGORY FILTER -->
+      <div
+        class="flex flex-wrap justify-center gap-2 mb-6 md:mb-8 fade-zoom-in"
       >
-        {{ category }}
-      </button>
-    </div>
+        <button
+          v-for="category in categories"
+          :key="category"
+          @click="selectCategory(category)"
+          :class="[
+            'px-3 py-1.5 rounded-full text-xs md:text-sm border transition-all duration-200 backdrop-blur',
+            selectedCategory === category
+              ? 'bg-[#0ef] text-black border-[#0ef] shadow-[0_0_16px_rgba(14,255,255,0.4)]'
+              : 'bg-[#050816]/80 text-[#0ef] border-[#0ef]/40 hover:bg-[#0ef] hover:text-black'
+          ]"
+        >
+          {{ category }}
+        </button>
+      </div>
 
-
-
+      <!-- GRID PROJECT -->
       <section>
-        <div>
-          <div class="grid grid-cols-1 gap-4 pb-32 md:grid-cols-3 md:gap-3 xl:grid-cols-3 xl:gap-3 2xl:gap-5 fade-zoom-in">
-            <div 
-              v-for="item in filteredItems" 
-              :key="item.id" 
-              class="portfolio-item-wrapper"
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 fade-zoom-in"
+        >
+          <div
+            v-for="(item, idx) in filteredItems"
+            :key="item.id"
+            class="group"
+          >
+            <!-- Single card with border -->
+            <div
+              class="item-card relative rounded-3xl bg-[#050816]/95 overflow-hidden
+                     flex flex-col h-full shadow-[0_0_20px_rgba(15,23,42,0.7)]"
             >
-              <div class="item-card flex flex-col items-center gap-2 rounded bg-[#1e1e1f] hover:bg-[#282828] border border-[#0ef] rounded-xl text-amber-50 md:gap-3 px-5 py-5 lg:px-5 h-full">
-                <div class="flex h-12 w-12 items-center justify-center p-0 h-full w-full lg:p-0 zoom-in">
-                  <div class="portfolio-image relative">
-                    <img 
-                      alt="Project Image" 
-                      loading="lazy" 
-                      decoding="async" 
-                      data-nimg="1" 
-                      class="drop-shadow-xl rounded rounded-xl portfolio-image max-h-48 w-full object-cover"
-                      :src="'img/portfolio-' + item.imageUrl + '.png'"
+              <!-- Subtle index badge -->
+              <div class="absolute top-3 left-3 z-20">
+                <div
+                  class="px-2 py-0.5 rounded-full bg-black/60 border border-white/10
+                         text-[10px] text-slate-300 flex items-center gap-1"
+                >
+                  <span
+                    class="w-1.5 h-1.5 rounded-full bg-[#0ef] shadow-[0_0_8px_rgba(14,255,255,0.8)]"
+                  ></span>
+                  #{{ idx + 1 }}
+                </div>
+              </div>
+
+              <!-- IMAGE -->
+              <div class="relative w-full overflow-hidden portfolio-image">
+                <img
+                  :src="'img/portfolio-' + item.imageUrl + '.png'"
+                  :alt="item.name"
+                  loading="lazy"
+                  decoding="async"
+                  class="w-full h-44 md:h-52 object-cover"
+                />
+
+                <!-- Gradient top overlay -->
+                <div
+                  class="pointer-events-none absolute inset-0 bg-gradient-to-t
+                         from-black/40 via-transparent to-black/10"
+                ></div>
+
+                <!-- Category pill -->
+                <div
+                  class="absolute top-3 right-3 px-2.5 py-1 rounded-full
+                         bg-black/70 backdrop-blur-sm text-[10px] uppercase
+                         tracking-wide text-[#0ef] border border-[#0ef]/60"
+                >
+                  {{ item.category }}
+                </div>
+
+                <!-- Eye overlay - klik buka demo / github -->
+                <button
+                  type="button"
+                  class="eye-overlay"
+                  @click.stop="redirectToLink(item)"
+                ></button>
+              </div>
+
+              <!-- CONTENT -->
+              <div
+                class="flex flex-col flex-1 px-4 pt-4 pb-4 md:px-5 md:pb-5"
+              >
+                <!-- Title -->
+                <div class="mb-3">
+                  <h3
+                    class="text-[1rem] md:text-[1.05rem] font-semibold text-white text-left leading-snug"
+                  >
+                    {{ item.name }}
+                    <span
+                      v-if="item.subtitle"
+                      class="block text-[11px] font-normal text-slate-400 mt-0.5"
                     >
-                    <div class="eye-overlay" @click="redirectToLink(item)"></div>
+                      {{ item.subtitle }}
+                    </span>
+                  </h3>
+                </div>
+
+                <!-- Status / description -->
+                <p
+                  class="text-[11px] md:text-xs text-slate-300 text-justify flex-1 paraf"
+                >
+                  {{ item.status }}
+                </p>
+
+                <!-- Tech -->
+                <div class="mt-3">
+                  <p
+                    class="text-[11px] uppercase tracking-wide text-slate-400 mb-1"
+                  >
+                    Tech Stack
+                  </p>
+                  <div class="flex flex-wrap gap-1.5">
+                    <span
+                      v-for="stack in item.tech.split(',')"
+                      :key="stack"
+                      class="px-2 py-0.5 rounded-full bg-[#0b1120]
+                             border border-[#0ef]/40 text-[10px] md:text-[11px]
+                             text-[#e0faff]"
+                    >
+                      {{ stack.trim() }}
+                    </span>
                   </div>
                 </div>
-                <div class="w-full flex flex-col gap-2 items-center text-sm md:text-base lg:text-lg flex-grow">
-                  <div class="title-text font-medium text-secondary text-center md:text-base">{{ item.name }}
-                    <br>
-                    <span class="text-sm font-light">{{ item.subtitle }}</span>
-                  </div>
-                  <div class="w-full text-justify text-[10px] text-[#c1c1c1] md:text-xs lg:text-sm flex-grow">
-                    {{ item.status }}
-                  </div>
-                  <div class="w-full mt-4 text-normal text-sm text-left text-[#0ef]">
-                    {{ item.tech }}
-                  </div>
-                  <div class="w-full flex justify-end mt-auto">
-                    <div class="flex cursor-pointer items-end gap-2 text-primary">
-                      <a 
-                        v-if="item.github !== 'null'" 
-                        :href="item.github" 
-                        target="_blank" 
-                        rel="noreferrer"
-                        title="View github repository" 
-                        class="transition-all hover:text-accent"
+
+                <!-- Links -->
+                <div class="mt-4 flex items-center justify-between gap-3">
+                  <button
+                    type="button"
+                    class="text-[11px] md:text-xs text-slate-400 flex items-center gap-1.5
+                           group-hover:text-[#0ef] transition-colors"
+                    @click="redirectToLink(item)"
+                  >
+                    <span>Open project</span>
+                    <span
+                      class="group-hover:translate-x-0.5 transition-transform"
+                    >
+                      ↗
+                    </span>
+                  </button>
+
+                  <div class="flex items-center gap-3 text-slate-400">
+                    <!-- GitHub -->
+                    <a
+                      v-if="item.github !== 'null'"
+                      :href="item.github"
+                      target="_blank"
+                      rel="noreferrer"
+                      title="View GitHub repository"
+                      class="hover:text-[#0ef] transition-colors flex items-center gap-1"
+                      @click.stop
+                    >
+                      <svg
+                        stroke="currentColor"
+                        fill="none"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        height="16"
+                        width="16"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                        </svg>
-                      </a>
-                      <a 
-                        v-if="item.demo !== 'null'" 
-                        :href="item.demo" 
-                        target="_blank" 
-                        rel="noreferrer"
-                        title="View finished project" 
-                        class="transition-all hover:text-accent"
+                        <path
+                          d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                        ></path>
+                      </svg>
+                      <span class="text-[10px] hidden md:inline">Code</span>
+                    </a>
+
+                    <!-- Demo -->
+                    <a
+                      v-if="item.demo !== 'null'"
+                      :href="item.demo"
+                      target="_blank"
+                      rel="noreferrer"
+                      title="View live demo"
+                      class="hover:text-[#0ef] transition-colors flex items-center gap-1"
+                      @click.stop
+                    >
+                      <svg
+                        stroke="currentColor"
+                        fill="none"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        height="18"
+                        width="18"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="18" width="18" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                          <polyline points="15 3 21 3 21 9"></polyline>
-                          <line x1="10" y1="14" x2="21" y2="3"></line>
-                        </svg>
-                      </a>
-                    </div>
+                        <path
+                          d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                        ></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                      </svg>
+                      <span class="text-[10px] hidden md:inline">Live</span>
+                    </a>
                   </div>
                 </div>
               </div>
             </div>
+            <!-- /card -->
           </div>
         </div>
       </section>
@@ -315,80 +447,106 @@ export default {
   </div>
 </template>
 
-<style>
-.item-card:hover {
-  transition: transform 0.3s ease;
-  transform: translateY(-8px);
+<style scoped>
+.paraf {
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
-.item-card{
-  position: relative;
-  z-index: 10;
+@media (min-width: 768px) {
+  .paraf {
+    display: -webkit-box;
+  }
 }
 
-svg:hover{
-  stroke: #0ef;
-}
-
+/* Animasi masuk grid */
 @keyframes fadeZoomIn {
   0% {
     opacity: 0;
-    transform: scale(0.5);
+    transform: translateY(10px) scale(0.96);
   }
   100% {
     opacity: 1;
-    transform: scale(1);
+    transform: translateY(0) scale(1);
   }
 }
 
 .fade-zoom-in {
-  animation: fadeZoomIn 1s ease-in-out;
+  animation: fadeZoomIn 0.6s ease-out;
 }
 
-.item-card .portfolio-image {
+/* Card dengan border selalu aktif */
+.item-card {
+  border: 1.5px solid rgba(148, 163, 184, 0.35); /* visible even no hover */
+  border-radius: 1.5rem;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease,
+    border-width 0.25s ease,
+    background 0.25s ease;
+}
+
+.item-card:hover {
+  transform: translateY(-6px);
+  border-width: 2px;
+  border-color: rgba(14, 255, 255, 0.85);
+  box-shadow: 0 0 26px rgba(14, 255, 255, 0.18);
+  background: radial-gradient(
+    circle at top left,
+    rgba(14, 255, 255, 0.06),
+    #050816
+  );
+}
+
+/* Gambar & overlay */
+.portfolio-image {
   position: relative;
-  overflow: hidden; 
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-.item-card:hover .portfolio-image {
-  filter: blur(2px); 
-  transform: none;
-  border-radius: 10px;
-}
-
-.item-card .portfolio-image img {
+.portfolio-image img {
   transition: transform 0.3s ease;
   transform-origin: center;
-  max-height: 300px;  
 }
 
 .item-card:hover .portfolio-image img {
-  transform: scale(1); 
+  transform: scale(1.05);
 }
 
-.item-card:hover .portfolio-image {
-  transform: scale(1.05); 
-  filter: blur(1px); 
-  border-radius: 10px;
-}
-
-.item-card .eye-overlay {
-  display: none;
+/* Eye overlay – dibuat lebih terang */
+.eye-overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  inset: 0;
+  opacity: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(15, 23, 42, 0.06),
+    rgba(0, 0, 0, 0.25)
+  );
+  /* opsional: sedikit blur biar lembut */
+  backdrop-filter: blur(2px);
+  transition: opacity 0.25s ease;
+  cursor: pointer;
+}
+
+.eye-overlay::before {
+  content: '';
   width: 45px;
   height: 45px;
   background-image: url('@/assets/eyes.svg');
   background-size: cover;
   background-repeat: no-repeat;
-  z-index: 20;
+  filter: drop-shadow(0 0 6px rgba(14, 255, 255, 0.8));
 }
 
-.item-card:hover .portfolio-image .eye-overlay {
-  display: block;
+.item-card:hover .eye-overlay {
+  opacity: 1;
 }
 
 </style>

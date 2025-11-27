@@ -34,7 +34,7 @@
               </p>
               <p class="text-lg font-semibold text-[#0ef]">
                 {{ filteredExperiences.length }}
-                <span class="text-xs text-slate-400 font-normal">filtered</span>
+                <span class="text-xs text-slate-400 font-normal">Filtered</span>
               </p>
             </div>
           </div>
@@ -241,23 +241,22 @@
           </div>
 
           <!-- RIGHT: GALLERY (hanya muncul kalau showGallery = true) -->
-<div
-  v-if="showGallery && hasGallery"
-  :class="[
-    'md:w-1/3 border-t md:border-t-0 md:border-l border-[#0ef]/40 pt-4 md:pt-4 md:pl-6',
-    isGalleryHiding ? 'gallery-slide-out' : 'gallery-slide-in'
-  ]"
->
-
+          <div
+            v-if="showGallery && hasGallery"
+            :class="[
+              'md:w-1/2 border-t md:border-t-0 md:border-l border-[#0ef]/40 pt-4 md:pt-4 md:pl-6',
+              isGalleryHiding ? 'gallery-slide-out' : 'gallery-slide-in'
+            ]"
+          >
             <h3 class="text-white font-semibold mb-4 text-sm md:text-base text-center md:text-left">
               Internship Photo History
             </h3>
 
-            <div class="grid grid-cols-2 gap-4 justify-items-center">
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-5">
               <div
                 v-for="(photo, idx) in selectedExperience.gallery"
                 :key="idx"
-                class="relative group w-full max-w-[9rem] aspect-square"
+                class="relative group w-full aspect-[4/5]"
               >
                 <div class="w-full h-full rounded-2xl overflow-hidden border border-[#0ef]/40">
                   <img
@@ -269,7 +268,7 @@
 
                 <div
                   class="absolute inset-0 rounded-2xl bg-black/40 opacity-0 group-hover:opacity-100
-                        flex items-center justify-center text-[10px] text-white transition-opacity"
+                        flex items-center justify-center text-[10px] text-white transition-opacity pointer-cursor"
                 >
                   Photo {{ idx + 1 }}
                 </div>
@@ -322,7 +321,9 @@ export default {
             '/img/intern/2.jpeg',
             '/img/intern/3.jpeg',
             '/img/intern/4.jpeg',
-            '/img/intern/5.jpeg'
+            '/img/intern/5.jpeg',
+            '/img/intern/6.jpeg',
+            '/img/intern/7.jpeg'
           ]
         },
         {
