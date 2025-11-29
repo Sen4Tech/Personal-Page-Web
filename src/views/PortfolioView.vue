@@ -282,38 +282,38 @@ export default {
                 </div>
               </div>
 
-              <!-- IMAGE -->
               <div class="relative w-full overflow-hidden portfolio-image">
                 <img
                   :src="'img/portfolio-' + item.imageUrl + '.png'"
                   :alt="item.name"
                   loading="lazy"
                   decoding="async"
-                  class="w-full h-44 md:h-52 object-cover"
+                  class="w-full h-full object-cover block"
                 />
 
                 <!-- Gradient top overlay -->
                 <div
                   class="pointer-events-none absolute inset-0 bg-gradient-to-t
-                         from-black/40 via-transparent to-black/10"
+                        from-black/35 via-transparent to-black/5"
                 ></div>
 
                 <!-- Category pill -->
                 <div
                   class="absolute top-3 right-3 px-2.5 py-1 rounded-full
-                         bg-black/70 backdrop-blur-sm text-[10px] uppercase
-                         tracking-wide text-[#0ef] border border-[#0ef]/60"
+                        bg-black/70 backdrop-blur-sm text-[10px] uppercase
+                        tracking-wide text-[#0ef] border border-[#0ef]/60"
                 >
                   {{ item.category }}
                 </div>
 
-                <!-- Eye overlay - klik buka demo / github -->
+                <!-- Eye overlay -->
                 <button
                   type="button"
                   class="eye-overlay"
                   @click.stop="redirectToLink(item)"
                 ></button>
               </div>
+
 
               <!-- CONTENT -->
               <div
@@ -501,16 +501,26 @@ export default {
   );
 }
 
-/* Gambar & overlay */
+/* Container gambar: fixed aspect ratio, gambar ke-crop habis */
 .portfolio-image {
   position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9; /* bisa ganti 4/3 kalau mau lebih tinggi */
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .portfolio-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* ini yang bikin crop habis */
   transition: transform 0.3s ease;
   transform-origin: center;
 }
+
+.item-card:hover .portfolio-image img {
+  transform: scale(1.05);
+}
+
 
 .item-card:hover .portfolio-image img {
   transform: scale(1.05);

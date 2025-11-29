@@ -347,50 +347,50 @@ export default {
 
 <template>
   <div>
-    <!-- ABOUT ME -->
-    <div
-      class="bg-[#1e1e1f] px-5 py-5 md:px-12 md:py-10 text-left border border-[#0ef] rounded-3xl text-amber-50 mx-3 mb-5">
-      <article data-page="about">
+      <!-- ABOUT ME -->
+      <div
+        class="bg-[#1e1e1f] px-5 py-5 md:px-12 md:py-10 text-left border border-[#0ef] rounded-3xl text-amber-50 mx-3 mb-5">
+        <article data-page="about">
 
-        <header>
-          <div class="text-2xl font-bold text-white mb-5 fadein-bot title-section flex items-center">
-            About Me &nbsp;
-            <div class="h-[1px] w-32 bg-[#0ef] md:w-96 aos-init aos-animate" data-aos="zoom-in-left"
-              data-aos-duration="600"></div>
-          </div>
-        </header>
+          <header>
+            <div class="text-2xl font-bold text-white mb-5 fadein-bot title-section flex items-center">
+              About Me &nbsp;
+              <div class="h-[1px] w-32 bg-[#0ef] md:w-96 aos-init aos-animate" data-aos="zoom-in-left"
+                data-aos-duration="600"></div>
+            </div>
+          </header>
 
-        <!-- Mobile: foto di atas, teks di bawah; Desktop: row (teks + foto) -->
-        <section
-          class="text-sm md:text-lg text-justify flex flex-col-reverse gap-4 md:flex-row md:gap-8 md:justify-left md:items-center">
-          <div class="md:w-9/12">
-            <p class="mb-3 md:mb-7 fadein-left fadeins-1">
-              &nbsp; &nbsp; &nbsp; Hello, my name is Oktavianus!👋
-            </p>
-            <p class="mb-3 md:mb-7 fadein-left fadeins-1">
-              &nbsp; &nbsp; &nbsp; I'm 21 years old and currently studying in my final semester at Bina Nusantara
-              University, majoring in Information Systems. I'm currently focused on being a Full Stack Developer and have a
-              strong interest in technology.
-            </p>
-            <p class="mb-3 fadein-left fadeins-2">
-              &nbsp; &nbsp; &nbsp; I possess strong expertise in full-stack development and intermediate skills in cloud
-              computing. My experience stems not only from my studies at Binus University, but also from independent
-              exploration outside of campus and various self-projects I've built to hone my skills in real-world settings.
-              I have a passion for continuous learning, developing my technological skills, and creating innovative
-              solutions through my expertise in information technology. My academic journey is not just about earning a
-              degree, but also about preparing myself to become a competent, creative technology professional, ready to
-              face future industry challenges.
-            </p>
-          </div>
+          <!-- Mobile: foto di atas, teks di bawah; Desktop: row (teks + foto) -->
+          <section
+            class="text-sm md:text-lg text-justify flex flex-col-reverse gap-4 md:flex-row md:gap-8 md:justify-left md:items-center">
+            <div class="md:w-9/12">
+              <p class="mb-3 md:mb-7 fadein-left fadeins-1">
+                &nbsp; &nbsp; &nbsp; Hello, my name is Oktavianus!👋
+              </p>
+              <p class="mb-3 md:mb-7 fadein-left fadeins-1">
+                &nbsp; &nbsp; &nbsp; I'm 21 years old and currently studying in my final semester at Bina Nusantara
+                University, majoring in Information Systems. I'm currently focused on being a Full Stack Developer and have a
+                strong interest in technology.
+              </p>
+              <p class="mb-3 fadein-left fadeins-2">
+                &nbsp; &nbsp; &nbsp; I possess strong expertise in full-stack development and intermediate skills in cloud
+                computing. My experience stems not only from my studies at Binus University, but also from independent
+                exploration outside of campus and various self-projects I've built to hone my skills in real-world settings.
+                I have a passion for continuous learning, developing my technological skills, and creating innovative
+                solutions through my expertise in information technology. My academic journey is not just about earning a
+                degree, but also about preparing myself to become a competent, creative technology professional, ready to
+                face future industry challenges.
+              </p>
+            </div>
 
-          <div class="flex justify-center z-50 md:w-3/12">
-            <img class="w-64 h-64 rounded-full mb-3 object-cover fadein-up border-2 border-[#0ef] Foto"
-              src="img/ME.jpeg" alt="Foto">
-          </div>
-        </section>
+            <div class="flex justify-center z-50 md:w-3/12">
+              <img class="w-64 h-64 rounded-full mb-3 object-cover fadein-up border-2 border-[#0ef] Foto"
+                src="img/ME.jpeg" alt="Foto">
+            </div>
+          </section>
 
-      </article>
-    </div>
+        </article>
+      </div>
 
     <!-- 🎧 CURRENTLY LISTENING - SPOTIFY STYLE -->
     <div class="px-5 py-5 md:px-12 md:py-6 text-left text-amber-50 mx-3 mb-5">
