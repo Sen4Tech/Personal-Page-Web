@@ -8,7 +8,6 @@ export default {
         'All',
         'Web & Application Development',
         'System Analyst',
-        'Software Engineering',
         'UI/UX Designer',
         'Database',
       ],
@@ -102,7 +101,7 @@ export default {
           tech: 'ReactJS, Bootstrap, SequelizeJS, ExpressJS, Dbeaver',
           github: 'https://github.com/Sen4Tech/SOFTWARE-ENGINEERING_OKTAVIANUS',
           demo: 'null',
-          category: 'Software Engineering'
+          category: 'Web & Application Development'
         },
         {
           id: 10,
@@ -288,8 +287,9 @@ export default {
                   :alt="item.name"
                   loading="lazy"
                   decoding="async"
-                  class="w-full h-full object-cover block"
+                  class="portfolio-img"
                 />
+
 
                 <!-- Gradient top overlay -->
                 <div
@@ -516,11 +516,6 @@ export default {
   transition: transform 0.3s ease;
   transform-origin: center;
 }
-
-.item-card:hover .portfolio-image img {
-  transform: scale(1.05);
-}
-
 
 .item-card:hover .portfolio-image img {
   transform: scale(1.05);
