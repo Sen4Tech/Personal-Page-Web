@@ -31,7 +31,7 @@
 
       <!-- GitHub -->
       <a
-        href="https://github.com/Sen4Techn"
+        href="https://github.com/Sen4Tech"
         target="_blank"
         rel="noreferrer"
         class="w-9 h-9 rounded-full border border-[#0ef]/60
