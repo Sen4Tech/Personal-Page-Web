@@ -357,7 +357,11 @@ export default {
             'Campaign Topic: "Kehidupan Beragama di Era Digital"\n• Providing understanding to boarding school children on how to utilize digital technology to strengthen religious life\n• Teaching digital content filters that are in accordance with religious values\n• Building awareness about the wise and sharia-compliant use of social media\n• Providing practical guidance in carrying out worship in the digital era',
           skills: ['Public Speaking', 'Project Planning', 'Time Management'],
           industry: 'Education',
-          gallery: []
+          gallery: [
+            '/img/volunteer/cb3-1.jpg',
+            '/img/volunteer/cb3-2.jpg',
+            '/img/volunteer/cb3-3.jpg',
+          ]
         },
         {
           id: 4,
@@ -374,7 +378,9 @@ export default {
             'Campaign Topic: "Meningkatkan Pengetahuan Mengenai Kebudayaan Betawi Di Era Globalisasi"\n• Reintroducing Betawi culture to the younger generation\n• Increasing appreciation of Betawi cultural values\n• Encouraging the preservation of Betawi culture in the modern era\n• Building pride in local cultural identity',
           skills: ['Public Speaking', 'Project Planning', 'Time Management'],
           industry: 'Education',
-          gallery: []
+          gallery: [
+             '/img/volunteer/cb2.jpg',
+          ]
         },
         {
           id: 5,

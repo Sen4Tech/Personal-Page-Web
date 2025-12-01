@@ -15,29 +15,59 @@
         </a>
       </button>
 
-      <div class="flex md:order-2 fadein-bot gap-2">
-        <a href="https://www.linkedin.com/in/oktavianuschen">
-          <img
-            class="w-9 rounded-full"
-            src="https://logospng.org/download/linkedin/logo-linkedin-icon-1536.png"
-            alt="linked"
-          />
-        </a>
-        <a href="https://wa.me/+6282276048623">
-          <img
-            class="w-9 rounded-full"
-            src="https://logospng.org/download/whatsapp/logo-whatsapp-verde-icone-ios-android-2048.png"
-            alt="Whatsapp"
-          />
-        </a>
-        <a href="mailto:oktavianuschn@gmail.com">
-          <img
-            class="w-9 rounded-full"
-            src="https://clipartcraft.com/images/email-logo-png-gmail.png"
-            alt="Email"
-          />
-        </a>
-      </div>
+    <div class="flex md:order-2 fadein-bot gap-2">
+      <!-- LinkedIn -->
+      <a
+        href="https://www.linkedin.com/in/oktavianuschen"
+        target="_blank"
+        rel="noreferrer"
+        class="w-9 h-9 rounded-full border border-[#0ef]/60
+              flex items-center justify-center
+              text-[#0ef] hover:bg-[#0ef] hover:text-black
+              transition-colors duration-200"
+      >
+        <i class="fa-brands fa-linkedin-in text-lg"></i>
+      </a>
+
+      <!-- GitHub -->
+      <a
+        href="https://github.com/Sen4Techn"
+        target="_blank"
+        rel="noreferrer"
+        class="w-9 h-9 rounded-full border border-[#0ef]/60
+              flex items-center justify-center
+              text-[#0ef] hover:bg-[#0ef] hover:text-black
+              transition-colors duration-200"
+      >
+        <i class="fa-brands fa-github text-lg"></i>
+      </a>
+
+      <!-- WhatsApp -->
+      <a
+        href="https://wa.me/+6282276048623"
+        target="_blank"
+        rel="noreferrer"
+        class="w-9 h-9 rounded-full border border-[#0ef]/60
+              flex items-center justify-center
+              text-[#0ef] hover:bg-[#0ef] hover:text-black
+              transition-colors duration-200"
+      >
+        <i class="fa-brands fa-whatsapp text-lg"></i>
+      </a>
+
+      <!-- Email -->
+      <a
+        href="mailto:oktavianuschn@gmail.com"
+        class="w-9 h-9 rounded-full border border-[#0ef]/60
+              flex items-center justify-center
+              text-[#0ef] hover:bg-[#0ef] hover:text-black
+              transition-colors duration-200"
+      >
+        <i class="fa-solid fa-envelope text-lg"></i>
+      </a>
+    </div>
+
+
 
       <div
         class="hidden md:flex justify-between items-center w-full md:w-auto md:order-1"

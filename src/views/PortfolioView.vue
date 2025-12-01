@@ -290,7 +290,6 @@ export default {
                   class="portfolio-img"
                 />
 
-
                 <!-- Gradient top overlay -->
                 <div
                   class="pointer-events-none absolute inset-0 bg-gradient-to-t
@@ -501,18 +500,17 @@ export default {
   );
 }
 
-/* Container gambar: fixed aspect ratio, gambar ke-crop habis */
 .portfolio-image {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9; /* bisa ganti 4/3 kalau mau lebih tinggi */
+  aspect-ratio: 16 / 9; 
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .portfolio-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;      /* ini yang bikin crop habis */
+  object-fit: cover;    
   transition: transform 0.3s ease;
   transform-origin: center;
 }
@@ -521,7 +519,6 @@ export default {
   transform: scale(1.05);
 }
 
-/* Eye overlay – dibuat lebih terang */
 .eye-overlay {
   display: flex;
   align-items: center;
@@ -534,7 +531,6 @@ export default {
     rgba(15, 23, 42, 0.06),
     rgba(0, 0, 0, 0.25)
   );
-  /* opsional: sedikit blur biar lembut */
   backdrop-filter: blur(2px);
   transition: opacity 0.25s ease;
   cursor: pointer;
