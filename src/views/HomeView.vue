@@ -1,9 +1,12 @@
 <template>
   <main
-    class="mt-10 md:mt-1 flex flex-col-reverse gap-8 items-center md:flex-row-reverse md:gap-16 md:justify-center min-h-[65vh] md:min-h-[80vh]">
+    class="relative z-[100] mt-10 md:mt-1 flex flex-col-reverse gap-8 items-center md:flex-row-reverse md:gap-16 md:justify-center min-h-[65vh] md:min-h-[80vh]">
+    
     <div class="space-y-2 text-center md:text-left px-10">
+      
       <p class="text-amber-200" style="color: #0ef;">Hello, My Name Is</p>
       <h1 class="text-4xl font-bold md:text-5xl text-white fadein-up">Oktavianus</h1>
+
       <div class="py-2">
         <h1
           class="typewrite text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-slate-100 to-cyan-400 md:text-2xl fadein-up"
@@ -11,28 +14,67 @@
           <span class="wrap">{{ txt }}</span>
         </h1>
       </div>
-      <p class="text-white pr-4 fade-in-from-left">Welcome to My Portfolio <span class="wave">👋🏼</span></p>
+
+      <p class="text-white pr-4 fade-in-from-left">
+        Welcome to My Portfolio <span class="wave">👋🏼</span>
+      </p>
+
       <br>
-      <a href="https://drive.usercontent.google.com/u/3/uc?id=1oN50JZMSH9wutCwoCchEozZ0tufcQJD2&export=download" 
-   a.download="Oktavianus - CV.pdf"
-   class="fadein-bot fade-500 flex items-center py-2 px-4 mx-auto text-sm font-medium rounded-lg border transition duration-300 md:py-2.5 md:px-5 md:mx-0 text-amber-200 border-[#0ef] bg-[#1e1e1f] hover:bg-[#0ef] hover:bg-opacity-10 bg-transparent focus:outline-none w-fit"
-   style="color: #0ef; text-decoration: none; z-index: 50; position: relative;">
-  <svg
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="mr-2 w-4 h-4">
-    <path fill-rule="evenodd"
-      d="M5.625 1.5H9a3.75 3.75 0 013.75 3.75v1.875c0 1.036.84 1.875 1.875 1.875H16.5a3.75 3.75 0 013.75 3.75v7.875c0 1.035-.84 1.875-1.875 1.875H5.625a1.875 1.875 0 01-1.875-1.875V3.375c0-1.036.84-1.875 1.875-1.875zm5.845 17.03a.75.75 0 001.06 0l3-3a.75.75 0 10-1.06-1.06l-1.72 1.72V12a.75.75 0 00-1.5 0v4.19l-1.72-1.72a.75.75 0 00-1.06 1.06l3 3z"
-      clip-rule="evenodd"></path>
-    <path
-      d="M14.25 5.25a5.23 5.23 0 00-1.279-3.434 9.768 9.768 0 016.963 6.963A5.23 5.23 0 0016.5 7.5h-1.875a.375.375 0 01-.375-.375V5.25z">
-    </path>
-  </svg>Download CV
-</a>
+
+      <div class="flex gap-3 justify-center md:justify-start fadein-bot fade-500 relative z-[200]">
+        <a 
+          href="/resume/Oktavianus-resume.pdf"
+          download="Oktavianus-Resume.pdf"
+          class="flex items-center py-2 px-4 text-sm font-medium rounded-lg border transition duration-300 text-amber-200 border-[#0ef] bg-[#1e1e1f] hover:bg-[#0ef] hover:bg-opacity-10 bg-transparent focus:outline-none"
+          style="color: #0ef; text-decoration: none;"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="mr-2 w-4 h-4">
+            <path fill-rule="evenodd"
+              d="M5.625 1.5H9a3.75 3.75 0 013.75 3.75v1.875c0 1.036.84 1.875 1.875 1.875H16.5a3.75 3.75 0 013.75 3.75v7.875c0 1.035-.84 1.875-1.875 1.875H5.625a1.875 1.875 0 01-1.875-1.875V3.375c0-1.036.84-1.875 1.875-1.875zm5.845 17.03a.75.75 0 001.06 0l3-3a.75.75 0 10-1.06-1.06l-1.72 1.72V12a.75.75 0 00-1.5 0v4.19l-1.72-1.72a.75.75 0 00-1.06 1.06l3 3z"
+              clip-rule="evenodd"></path>
+          </svg>
+          Download CV
+        </a>
+
+        <!-- SEE CV BUTTON -->
+        <button
+          @click="showModal = true"
+          class="flex items-center py-2 px-4 text-sm font-medium rounded-lg border transition duration-300 text-amber-200 border-[#0ef] bg-[#1e1e1f] hover:bg-[#0ef] hover:bg-opacity-10 focus:outline-none"
+          style="color: #0ef;"
+        >
+          👀 View CV
+        </button>
+      </div>
 
     </div>
-    <div class="flex justify-center md:justify-start fadein-left z-50"><img alt="avatar" fetchpriority="high" width="300" height="300" decoding="async" data-nimg="1"
+
+    <div class="flex justify-center md:justify-start fadein-left z-[10]">
+      <img alt="avatar" width="300" height="300"
         class="w-64 h-64 object-cover rounded-full border-2 border-[#0ef] pict" src="img/FOTO.jpg">
     </div>
   </main>
+  
+  <!-- MODAL -->
+  <div 
+    v-if="showModal"
+    class="fixed inset-0 bg-black bg-opacity-70 backdrop-blur-md flex items-center justify-center z-[999] animate-fadeIn"
+  >
+    <div class="bg-[#1f242d] rounded-xl w-[90%] md:w-[70%] h-[85%] border border-[#0ef] shadow-[0_0_20px_#0ef] animate-scaleIn flex flex-col">
+
+      <!-- Header -->
+      <div class="flex justify-between items-center p-4 border-b border-[#0ef]">
+        <h2 class="text-white text-lg font-semibold">My CV Preview</h2>
+        <button @click="showModal = false" class="text-[#0ef] text-xl hover:text-white transition">✕</button>
+      </div>
+
+      <!-- PDF Viewer -->
+      <iframe 
+        src="/resume/Oktavianus-resume.pdf"
+        class="w-full h-full rounded-b-xl"
+      ></iframe>
+
+    </div>
+  </div>
 </template>
 
 <script>
@@ -40,6 +82,7 @@ export default {
   name: 'HomeView',
   data() {
     return {
+      showModal: false,
       toRotate: ["Front End Developer","Back End Developer","Full Stack Developer","UI/UX Designer"],
       period: 2000,
       txt: '',
@@ -47,6 +90,7 @@ export default {
       isDeleting: false,
     };
   },
+
   mounted() {
     this.$nextTick(() => {
       this.tick();
@@ -63,7 +107,10 @@ export default {
       let i = this.loopNum % this.toRotate.length;
       let fullTxt = this.toRotate[i];
 
-      this.txt = this.isDeleting ? fullTxt.substring(0, this.txt.length - 1) : fullTxt.substring(0, this.txt.length + 1);
+      this.txt = this.isDeleting
+        ? fullTxt.substring(0, this.txt.length - 1)
+        : fullTxt.substring(0, this.txt.length + 1);
+
       typewriter.innerHTML = `<span class="wrap">${this.txt}</span>`;
 
       let that = this;
@@ -112,31 +159,24 @@ body {
   0% {
     transform: rotate(0deg)
   }
-
   10% {
     transform: rotate(14deg)
   }
-
   20% {
     transform: rotate(-8deg)
   }
-
   30% {
     transform: rotate(14deg)
   }
-
   40% {
     transform: rotate(-4deg)
   }
-
   50% {
     transform: rotate(10deg)
   }
-
   60% {
     transform: rotate(0deg)
   }
-
   to {
     transform: rotate(0deg)
   }
@@ -144,8 +184,8 @@ body {
 
 .pict {
   box-shadow: 0px 0px 73px -9px #0ef;
--webkit-box-shadow: 0px 0px 73px -9px #0ef;
--moz-box-shadow: 0px 0px 73px -9px #0ef;
+  -webkit-box-shadow: 0px 0px 73px -9px #0ef;
+  -moz-box-shadow: 0px 0px 73px -9px #0ef;
 }
 
 .fadein-up {
@@ -161,7 +201,6 @@ body {
     opacity: 0;
     transform: translate3d(0, 100%, 0);
   }
-
   to {
     opacity: 1;
     transform: translate3d(0, 0, 0);
@@ -212,7 +251,6 @@ body {
     opacity: 0;
     transform: translate3d(0, -100%, 0);
   }
-
   to {
     opacity: 1;
     transform: translate3d(0, 0, 0);
@@ -239,4 +277,19 @@ body {
   --main-color:#0ef;
 }
 
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes scaleIn {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.animate-scaleIn {
+  animation: scaleIn 0.3s ease-out;
+}
 </style>

@@ -117,8 +117,9 @@
                     {{ experience.company }}
                   </p>
                   <p class="text-[11px] text-slate-400 mb-1">
-                    {{ experience.startDate }} - {{ experience.endDate || 'Present' }}
-                    <span v-if="experience.duration"> · {{ experience.duration }}</span>
+                    {{ formatMonthYear(experience.startDate) }} -
+                    {{ experience.endDate ? formatMonthYear(experience.endDate) : 'Present' }}
+                    <span v-if="getDuration(experience)"> · {{ getDuration(experience) }}</span>
                   </p>
                   <p class="text-[11px] text-slate-400 mb-2">
                     {{ experience.location }}
@@ -188,8 +189,9 @@
                   {{ selectedExperience.company }}
                 </p>
                 <p class="text-slate-400 text-xs md:text-sm">
-                  {{ selectedExperience.startDate }} - {{ selectedExperience.endDate || 'Present' }}
-                  <span v-if="selectedExperience.duration"> · {{ selectedExperience.duration }}</span>
+                  {{ formatMonthYear(selectedExperience.startDate) }} -
+                  {{ selectedExperience.endDate ? formatMonthYear(selectedExperience.endDate) : 'Present' }}
+                  <span v-if="getDuration(selectedExperience)"> · {{ getDuration(selectedExperience) }}</span>
                 </p>
                 <p class="text-slate-400 text-xs md:text-sm">
                   {{ selectedExperience.location }}
@@ -293,15 +295,20 @@ export default {
         {
           id: 1,
           title: 'Software Engineer Intern',
-          company: 'Sari Tirta Indonesia',
+          company: 'Sari Tirta Group',
           companyLogo:
             'https://media.licdn.com/dms/image/C560BAQExiLR9waT6eg/company-logo_200_200/0/1672743292777?e=2147483647&v=beta&t=005s9LsZN_HPCwchv3f2TdaMat-wsbiUIh5Q1fKq4oY',
           startDate: 'Feb 2025',
           endDate: '',
-          duration: '9 months',
           location: 'Central Jakarta',
-          description:
-            'Working as a Software Engineer Intern focusing on internal systems.\n• Build and improve internal web applications\n• Collaborate with cross-functional teams\n• Optimize queries and database structures\n• Maintain and refactor legacy code using Progress ABL',
+        description:
+          '• Developed the frontend for an internal employee attendance system using Vue.js, improving workflow and usability across subsidiary companies.\n' +
+          '• Took ownership of the company’s Procurement System, handling both frontend development and backend maintenance using Progress ABL.\n' +
+          '• Resolved long-standing bugs and implemented new features to streamline purchasing, approvals, and document handling.\n' +
+          '• Built an HR Attendance Dashboard to automate attendance tracking and support accurate payroll calculations.\n' +
+          '• Created APIs to support frontend data requirements and improve system integration.\n' +
+          '• Worked with PostgreSQL to manage, structure, and integrate backend data for system-wide functionalities.\n',
+
           skills: [
             'Progress ABL Edge',
             'VueJS',
@@ -334,7 +341,6 @@ export default {
             'https://static.wixstatic.com/media/db7cd5_1d30c59da39b484cbc4694fca8c48353~mv2.webp',
           startDate: 'Sep 2024',
           endDate: 'Feb 2025',
-          duration: '',
           location: 'West Jakarta',
           description:
             'At GDSC, I learned HTML to create the structure of the web and CSS to organize its appearance. I also learned about responsive design so that the web looks good on various devices.',
@@ -350,7 +356,6 @@ export default {
             'https://pbs.twimg.com/profile_images/3529569748/56f7f361a544f549a5e4b2c034d7c011_400x400.jpeg',
           startDate: 'Nov 2023',
           endDate: 'Dec 2023',
-          duration: '2 months',
           location:
             'Asrama Yatim & Dhuafa Yauma Kota Bambu Utara, West Jakarta',
           description:
@@ -371,7 +376,6 @@ export default {
             'https://pbs.twimg.com/profile_images/3529569748/56f7f361a544f549a5e4b2c034d7c011_400x400.jpeg',
           startDate: 'Mar 2023',
           endDate: 'May 2023',
-          duration: '3 months',
           location:
             'Asrama Yatim & Dhuafa Yauma Kota Bambu Utara, West Jakarta',
           description:
@@ -423,6 +427,85 @@ export default {
     }
   },
   methods: {
+    parseMonthYear(label) {
+      if (!label) return null
+
+      const parts = label.trim().split(/\s+/)
+      if (parts.length < 2) return null
+
+      const [rawMonth, rawYear] = parts
+
+      const key = rawMonth.slice(0, 3).toLowerCase()
+
+      const map = {
+        jan: 0,
+        feb: 1,
+        mar: 2,
+        apr: 3,
+        may: 4,
+        mei: 4,
+        jun: 5,
+        jul: 6,
+        aug: 7,
+        agu: 7, 
+        sep: 8,
+        oct: 9,
+        okt: 9, 
+        nov: 10,
+        dec: 11,
+        des: 11 
+      }
+
+      const month = map[key]
+      const year = parseInt(rawYear, 10)
+
+      if (month === undefined || isNaN(year)) return null
+
+      return new Date(year, month, 1)
+    },
+
+    formatMonthYear(label) {
+      const date = this.parseMonthYear(label)
+      if (!date) return label || ''
+
+      return date.toLocaleString('en-US', {
+        month: 'short',
+        year: 'numeric'
+      })
+    },
+
+    getDuration(experience) {
+      if (!experience) return ''
+
+      const start = this.parseMonthYear(experience.startDate)
+      if (!start) return ''
+
+      const end = experience.endDate
+        ? this.parseMonthYear(experience.endDate)
+        : new Date()
+
+      if (!end) return ''
+
+      let years = end.getFullYear() - start.getFullYear()
+      let months = end.getMonth() - start.getMonth()
+
+      if (months < 0) {
+        years -= 1
+        months += 12
+      }
+
+      // kalau karena data salah sampai end < start
+      if (years < 0 || (years === 0 && months < 0)) return ''
+
+      const parts = []
+      if (years > 0) parts.push(`${years} year${years > 1 ? 's' : ''}`)
+      if (months > 0) parts.push(`${months} month${months > 1 ? 's' : ''}`)
+
+      if (parts.length === 0) parts.push('< 1 month')
+
+      return parts.join(' ')
+    },
+
     openModal(experience) {
       this.selectedExperience = experience
       this.showModal = true
