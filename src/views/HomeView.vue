@@ -83,7 +83,7 @@ export default {
   data() {
     return {
       showModal: false,
-      toRotate: ["Front End Developer","Back End Developer","Full Stack Developer","UI/UX Designer"],
+      toRotate: ["Front End Developer","Back End Developer","Full Stack Developer", "Software Engineer"],
       period: 2000,
       txt: '',
       loopNum: 0,
