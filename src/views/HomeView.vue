@@ -50,7 +50,7 @@
 
     <div class="flex justify-center md:justify-start fadein-left z-[10]">
       <img alt="avatar" width="300" height="300"
-        class="w-64 h-64 object-cover rounded-full border-2 border-[#0ef] pict" src="img/FOTO.jpg">
+        class="w-64 h-64 object-cover rounded-full border-2 border-[#0ef] pict" src="img/FOTO2.png">
     </div>
   </main>
   

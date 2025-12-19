@@ -385,7 +385,7 @@ export default {
 
             <div class="flex justify-center z-50 md:w-3/12">
               <img class="w-64 h-64 rounded-full mb-3 object-cover fadein-up border-2 border-[#0ef] Foto"
-                src="img/ME.jpeg" alt="Foto">
+                src="img/about.jpeg" alt="Foto">
             </div>
           </section>
 
