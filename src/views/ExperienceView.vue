@@ -330,7 +330,8 @@ export default {
             '/img/intern/4.jpeg',
             '/img/intern/5.jpeg',
             '/img/intern/6.jpeg',
-            '/img/intern/7.jpeg'
+            '/img/intern/7.jpeg',
+            '/img/intern/8.jpeg'
           ]
         },
         {
